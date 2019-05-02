@@ -75,4 +75,16 @@ $(document).ready(function () {
 
         });
     });
+
+
+
+
+    $('.nav').on('click', 'a', function () {
+        $('.nav a.active').removeClass('active');
+        $(this).addClass('active');
+    });
+
+
+
+
 });

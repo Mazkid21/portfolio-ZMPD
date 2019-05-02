@@ -459,6 +459,10 @@ a {
     transform: translate3d(0px, 0px, 0px);
 }
 
+
+
+
+
 #portfolio {
     width: 100%;
     margin: 20px 0px;
@@ -476,6 +480,7 @@ a {
     opacity: 0.5;
 }
 
+
 .web {
     background: #00C5CD;
 }
@@ -486,4 +491,147 @@ a {
 
 .bcards {
     background: #ddd;
+}
+
+
+/* Photo Nav bar  */
+
+
+.wrapper {
+    width: 100vw;
+    color: #333;
+    background: #333;
+    display: flex;
+}
+
+.sidebar {
+    flex-basis: 20%;
+}
+
+
+.content {
+    flex: 1;
+    padding: 0px 30px 30px 30px;
+    background: #eee;
+    box-shadow: 0 0 5px black;
+    transform: translate3d(0, 0, 0);
+    transition: all .3s;
+    overflow: auto;
+}
+
+#photoAbout {
+    padding-top: 0px;
+    padding-bottom: 100px;
+}
+
+#photoPortfolio {
+    padding-bottom: 100px;
+
+}
+
+
+
+.title {
+    font-size: 16px;
+    line-height: 125px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 7px;
+    color: #eee;
+    border-bottom: 1px solid #222;
+    background: #2a2a2a;
+    background: url(images/logoBlack.png) no-repeat center top;
+    background-size: contain;
+    height: 9rem;
+}
+
+
+
+.nav {
+    padding-left: 0px;
+    text-align: center;
+}
+
+.nav li a {
+    padding-bottom: 15px;
+    font-size: 12px;
+    border-bottom: 1px solid #222;
+}
+
+
+
+.nav li a:hover {
+    background: #444;
+}
+
+.nav li a.active {
+    box-shadow: inset 5px 0 0 #5b5, inset 6px 0 0 #222;
+    background: #444;
+}
+
+
+/* Lightbox */
+
+
+.text-center {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.lightbox-gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.lightbox-gallery div>img {
+    max-width: 100%;
+    display: block;
+}
+
+.lightbox-gallery div {
+    margin: 10px;
+    flex-basis: 180px;
+}
+
+@media only screen and (max-width: 480px) {
+    .lightbox-gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .lightbox>div {
+        margin-bottom: 10px;
+    }
+}
+
+/*Lighbox CSS*/
+
+.lightbox {
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    padding-top: 30px;
+    box-sizing: border-box;
+}
+
+.lightbox img {
+    display: block;
+    margin: auto;
+}
+
+.lightbox .caption {
+    margin: 15px auto;
+    width: 50%;
+    text-align: center;
+    font-size: 1em;
+    line-height: 1.5;
+    font-weight: 700;
+    color: #eee;
 }
