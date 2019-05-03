@@ -280,111 +280,7 @@ a {
     vertical-align: middle;
 }
 
-.price {
-    color: #34d5cf;
-    margin: 1vw 0;
-}
 
-.currency {
-    font-weight: 700;
-    font-size: 1rem;
-}
-
-.amount {
-    font-size: 1.6rem;
-    vertical-align: top;
-    font-family: sans-serif;
-}
-
-/* button */
-.buy-button {
-    height: 50px;
-    width: 100%;
-    margin: 2rem 0;
-    position: relative;
-    background: #eee;
-    border: 3px solid #f9efb2;
-}
-
-.buy-button>span {
-    display: block;
-    position: relative;
-    font-weight: 700;
-    font-size: 1rem;
-    text-transform: uppercase;
-    color: #1f1f22;
-    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-    transition: opacity 0.35s, transform 0.35s;
-    z-index: 10;
-    line-height: 60px;
-}
-
-.buy-button::after,
-.buy-button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    border: 3px solid #f9efb2;
-    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-    transition: opacity 0.35s, transform 0.35s, ease-in-out .3s;
-}
-
-.buy-button::before {
-    background: #FFF;
-    margin: 0px 0 0 0px;
-    top: 5px;
-    left: 5px;
-    width: calc(100% + 2px);
-    height: calc(100% + 2px);
-    z-index: 1;
-}
-
-.buy-button:hover span,
-.buy-button:hover::before {
-    transform: translate3d(-4px, -4px, 0px);
-}
-
-.buy-button:hover::before {
-    background: #f9efb2;
-}
-
-.size-guide-link {
-    display: inline-block;
-    font-weight: 500;
-    cursor: pointer;
-    font-size: .8rem;
-}
-
-.underline-link {
-    overflow: hidden;
-    padding-bottom: .5vh;
-    position: relative;
-}
-
-.underline-link::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background: #202023;
-    -webkit-transform-origin: left;
-    transform-origin: left;
-    -webkit-transform: scaleX(0);
-    transform: scaleX(0);
-    -webkit-transition: -webkit-transform .2s ease-in-out;
-    transition: transform .2s ease-in-out;
-
-}
-
-.underline-link.active::before,
-.underline-link.hovered::before,
-.underline-link:hover::before {
-    -webkit-transform: scaleX(1);
-    transform: scaleX(1);
-}
 
 /* Close Icon animated */
 /* Thanks to @arthurhamon */
@@ -396,6 +292,13 @@ a {
     top: 4%;
     right: 2%;
 }
+
+@media only screen and (max-width: 600px) {
+    .close-icon {
+        top: 2%;
+    }
+}
+
 
 /* Test your cubic beziers here http://cubic-bezier.com/ */
 .close-icon div {
@@ -442,11 +345,23 @@ a {
     transform: translate3d(0px, 0px, 0px);
 }
 
+@media only screen and (max-width: 600px) {
+    .close-icon div::before {
+        background: none repeat scroll 0 0 white;
+    }
+}
+
 /* Now you don't */
 .close-icon div::after {
     background: none repeat scroll 0 0 #f60808;
     opacity: 0;
     transform: translate3d(100%, 0px, 0px);
+}
+
+@media only screen and (max-width: 600px) {
+    .close-icon div::after {
+        background: none repeat scroll 0 0 #0f0f0f;
+    }
 }
 
 .close-icon:hover div::before {
@@ -504,6 +419,12 @@ a {
     display: flex;
 }
 
+@media only screen and (max-width: 600px) {
+    .wrapper {
+        flex-direction: column;
+    }
+}
+
 .sidebar {
     flex-basis: 20%;
 }
@@ -532,8 +453,8 @@ a {
 
 
 .title {
-    font-size: 16px;
-    line-height: 125px;
+    font-size: 19px;
+    line-height: 287px;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 7px;
@@ -542,7 +463,18 @@ a {
     background: #2a2a2a;
     background: url(images/logoBlack.png) no-repeat center top;
     background-size: contain;
-    height: 9rem;
+    height: 10rem;
+}
+
+@media only screen and (max-width: 600px) {
+    .title {
+        font-size: 15px;
+        height: 3rem;
+        line-height: 50px;
+        text-align: center;
+        background: url(images/logoBlack.png) no-repeat left top;
+        background-size: contain;
+    }
 }
 
 
@@ -550,6 +482,7 @@ a {
 .nav {
     padding-left: 0px;
     text-align: center;
+    margin: 0px;
 }
 
 .nav li a {
