@@ -84,6 +84,26 @@ $(document).ready(function () {
         $(this).addClass('active');
     });
 
+    var isOpen = 0; // Is the menu open or closed?
+
+    $('.sidebar').on('click', '.icon', function () {
+        if (isOpen == 0) {
+
+            $('i.icon').removeClass('fa-bars');
+            $('i.icon').addClass('fa-times');
+            $('.nav-li').addClass('navResponsive');
+            isOpen++;
+        } else {
+
+            $('.nav-li').removeClass('navResponsive');
+            $('i.icon').removeClass('fa-times');
+            $('i.icon').addClass('fa-bars');
+            isOpen--;
+        }
+
+    });
+
+
 
 
 

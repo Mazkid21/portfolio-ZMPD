@@ -21,12 +21,27 @@ body {
     flex-wrap: wrap;
 }
 
+@media only screen and (max-width: 600px) {
+    .grid {
+        flex-direction: column;
+
+    }
+}
+
 .grid .column {
     position: relative;
     overflow: hidden;
     width: 50%;
     text-align: center;
     cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+    .grid .column {
+        width: 100%;
+        height: 50%;
+
+    }
 }
 
 .grid .column img {
@@ -56,19 +71,10 @@ body {
 
 @media only screen and (max-width: 600px) {
     .grid .column .content {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
+
         padding: 0;
-        color: #fff;
-        text-transform: uppercase;
-        font-size: 1.3rem;
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 100%;
+        overflow: hidden;
+
     }
 }
 
@@ -108,6 +114,13 @@ body {
     -webkit-transform: translateY(-10%);
     -ms-transform: translateY(-10%);
     transform: translateY(-10%);
+}
+
+@media only screen and (max-width: 600px) {
+    #logo {
+        top: 2%;
+
+    }
 }
 
 #logo img {
@@ -296,6 +309,7 @@ a {
 @media only screen and (max-width: 600px) {
     .close-icon {
         top: 2%;
+        right: 90%;
     }
 }
 
@@ -430,6 +444,12 @@ a {
 }
 
 
+@media only screen and (max-width: 600px) {
+    .sidebar {
+        flex-basis: 0%;
+    }
+}
+
 .content {
     flex: 1;
     padding: 0px 30px 30px 30px;
@@ -443,6 +463,7 @@ a {
 #photoAbout {
     padding-top: 0px;
     padding-bottom: 100px;
+    text-align: center;
 }
 
 #photoPortfolio {
@@ -472,8 +493,9 @@ a {
         height: 3rem;
         line-height: 50px;
         text-align: center;
-        background: url(images/logoBlack.png) no-repeat left top;
+        background: url(images/logoBlack.png) no-repeat center top;
         background-size: contain;
+        padding-left: 50px;
     }
 }
 
@@ -486,12 +508,34 @@ a {
 }
 
 .nav li a {
+    padding: 15px 0px;
     padding-bottom: 15px;
     font-size: 12px;
     border-bottom: 1px solid #222;
 }
 
+.icon {
+    display: none !important;
+}
 
+@media screen and (max-width: 600px) {
+    .nav-li {
+        display: none;
+    }
+
+    .icon {
+        color: white;
+        float: right;
+        display: inline-block !important;
+        padding-top: 5px;
+        font-size: 37px;
+    }
+}
+
+.navResponsive {
+    display: list-item;
+
+}
 
 .nav li a:hover {
     background: #444;
