@@ -1,6 +1,6 @@
 $(document).ready(function () {
     $("#photo .content").click(function () {
-        console.log("hii");
+
         $("#photo-overlay").addClass("animated fadeInLeft open").on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
             $(this).removeClass("animated fadeInLeft");
         });
@@ -77,14 +77,18 @@ $(document).ready(function () {
     });
 
 
-
+    var isOpen = 0; // Is the menu open or closed?
 
     $('.nav').on('click', 'a', function () {
         $('.nav a.active').removeClass('active');
+        $('.nav-li').removeClass('navResponsive');
+        $('i.icon').removeClass('fa-times');
+        $('i.icon').addClass('fa-bars');
         $(this).addClass('active');
+
     });
 
-    var isOpen = 0; // Is the menu open or closed?
+
 
     $('.sidebar').on('click', '.icon', function () {
         if (isOpen == 0) {
@@ -103,7 +107,15 @@ $(document).ready(function () {
 
     });
 
+    var FancYB = $('.fancyboxPhoto');
+    FancYB.fancybox({
+        openEffect: 'fade',
+        closeEffect: 'fade',
+        padding: 0,
+        closeBtn: true,
 
+    });
+    FancYB.attr('rel', 'gallery');
 
 
 
