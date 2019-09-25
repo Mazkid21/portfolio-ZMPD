@@ -178,6 +178,119 @@
 
 
                         </div>
+                        <div id='collection-component-1569272957826'></div>
+                        <script type="text/javascript">
+                            /*<![CDATA[*/
+                            (function () {
+                                var scriptURL =
+                                    'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+                                if (window.ShopifyBuy) {
+                                    if (window.ShopifyBuy.UI) {
+                                        ShopifyBuyInit();
+                                    } else {
+                                        loadScript();
+                                    }
+                                } else {
+                                    loadScript();
+                                }
+
+                                function loadScript() {
+                                    var script = document.createElement('script');
+                                    script.async = true;
+                                    script.src = scriptURL;
+                                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName(
+                                        'body')[0]).appendChild(script);
+                                    script.onload = ShopifyBuyInit;
+                                }
+
+                                function ShopifyBuyInit() {
+                                    var client = ShopifyBuy.buildClient({
+                                        domain: 'zmpd.myshopify.com',
+                                        storefrontAccessToken: 'NICE TRY LOSERS',
+                                    });
+                                    ShopifyBuy.UI.onReady(client).then(function (ui) {
+                                        ui.createComponent('collection', {
+                                            id: '149911011364',
+                                            node: document.getElementById(
+                                                'collection-component-1569272957826'),
+                                            moneyFormat: '%24%7B%7Bamount%7D%7D',
+                                            options: {
+                                                "product": {
+                                                    "styles": {
+                                                        "product": {
+                                                            "@media (min-width: 601px)": {
+                                                                "max-width": "calc(33.33333% - 30px)",
+                                                                "margin-left": "30px",
+                                                                "margin-bottom": "50px",
+                                                                "width": "calc(33.33333% - 30px)"
+                                                            },
+                                                            "img": {
+                                                                "height": "calc(100% - 15px)",
+                                                                "position": "absolute",
+                                                                "left": "0",
+                                                                "right": "0",
+                                                                "top": "0"
+                                                            },
+                                                            "imgWrapper": {
+                                                                "padding-top": "calc(75% + 15px)",
+                                                                "position": "relative",
+                                                                "height": "0"
+                                                            }
+                                                        }
+                                                    },
+                                                    "buttonDestination": "modal",
+                                                    "contents": {
+                                                        "options": false
+                                                    },
+                                                    "text": {
+                                                        "button": "View product"
+                                                    }
+                                                },
+                                                "productSet": {
+                                                    "styles": {
+                                                        "products": {
+                                                            "@media (min-width: 601px)": {
+                                                                "margin-left": "-30px"
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "modalProduct": {
+                                                    "contents": {
+                                                        "img": false,
+                                                        "imgWithCarousel": true,
+                                                        "button": false,
+                                                        "buttonWithQuantity": true
+                                                    },
+                                                    "styles": {
+                                                        "product": {
+                                                            "@media (min-width: 601px)": {
+                                                                "max-width": "100%",
+                                                                "margin-left": "0px",
+                                                                "margin-bottom": "0px"
+                                                            }
+                                                        }
+                                                    },
+                                                    "text": {
+                                                        "button": "Add to cart"
+                                                    }
+                                                },
+                                                "cart": {
+                                                    "text": {
+                                                        "total": "Subtotal",
+                                                        "button": "Checkout"
+                                                    },
+                                                    "contents": {
+                                                        "note": true
+                                                    }
+                                                }
+                                            },
+                                        });
+                                    });
+                                }
+                            })();
+                            /*]]>*/
+                        </script>
                     </div>
                 </div>
 
@@ -230,49 +343,186 @@
             <div class='content'>
 
                 <div id="devAbout">
-                    <h1 style="margin-top: 0px;">ABOUT Section </h1>
-                    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                    <div class="card">
+                        <h1 style="margin-top: 0px;">ABOUT Section </h1>
+                        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque aliquet, magna in
+                            iaculis consequat, eros ex viverra magna, a viverra orci massa tempor nibh. Sed a consequat
+                            lectus. Fusce in aliquet augue, quis lobortis magna. Aenean varius aliquet magna in
+                            bibendum. Integer sagittis nulla quis arcu facilisis molestie. Sed placerat luctus leo, sit
+                            amet scelerisque nibh posuere sed. Integer luctus consectetur urna. Donec quis lobortis
+                            tortor. Fusce eget dapibus arcu.
+
+                            Duis varius aliquet quam, non pulvinar nisl sollicitudin sit amet. In feugiat dignissim
+                            dapibus. Duis aliquet, erat vel convallis euismod, nisl tellus efficitur nisi, et tristique
+                            sapien massa a ligula. Pellentesque habitant morbi tristique senectus et netus et malesuada
+                            fames ac turpis egestas. Donec dapibus porttitor dignissim. Fusce quam odio, efficitur quis
+                            quam interdum, aliquam vestibulum dui. Nulla facilisi. Pellentesque vel bibendum tellus.
+                            Proin tincidunt ac ipsum sed commodo. Etiam finibus molestie risus id lobortis. Morbi quis
+                            mauris vel justo imperdiet volutpat quis facilisis urna. Phasellus id augue faucibus,
+                            ultrices nibh eget, convallis orci.</p>
+                    </div>
                 </div>
-                <hr>
+
                 <div id="devPortfolio">
 
 
-                    <h1>portfolio Section </h1>
 
-                    <div class="container">
+                    <div class="card">
+                        <h1>portfolio Section </h1>
+                        <div class="module-card-wrap">
+                            <div class="module-card">
+                                <div class="module-card-title">Cheesecake</div>
+                                <div class="module-card-meta">
+                                    <div class="module-card-category">
+                                        <span class="fa fa-tag"></span>
+                                        <span>Desserts</span>
+                                    </div>
+                                    <div class="module-card-author">
+                                        <span class="fa fa-user"></span>
+                                        <span>Jenn Davis</span>
+                                    </div>
+                                </div> <!-- /module-card-meta -->
 
-                        <div class="lightbox-gallery">
-                            <div id="test"><img src="http://placehold.it/300/f1b702/fff&text=image1"
-                                    data-image-hd="http://placehold.it/600/f1b702/fff&text=image1"
-                                    alt="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, quae, quam. Ut dolorum quia, unde dicta at harum porro officia obcaecati ipsam deserunt fugit dolore delectus quam, maxime nisi quo.">
+                                <div class="module-card-bottom">
+                                    <img src="http://placehold.it/400x150" alt="cheesecake" class="module-card-img" />
+
+                                    <div>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea ipsum sit
+                                            perspiciatis iusto commodi nihil tenetur veritatis adipisci sed? Illo nobis
+                                            similique in facilis libero ab officia ratione nesciunt fugiat.</p>
+                                    </div>
+
+                                    <button class="module-card-button">See More</button>
+                                </div>
                             </div>
-                            <div><img src="http://placehold.it/300/d2f1b2/222&text=image2"
-                                    data-image-hd="http://placehold.it/600/d2f1b2/222&text=image2"
-                                    alt="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime accusamus officiis dignissimos doloribus consectetur harum eos sapiente optio aut minima.">
+
+                            <div class="module-card">
+                                <div class="module-card-title">Cheesecake</div>
+                                <div class="module-card-meta">
+                                    <div class="module-card-category">
+                                        <span class="fa fa-tag"></span>
+                                        <span>Desserts</span>
+                                    </div>
+                                    <div class="module-card-author">
+                                        <span class="fa fa-user"></span>
+                                        <span>Jenn Davis</span>
+                                    </div>
+                                </div> <!-- /module-card-meta -->
+
+                                <div class="module-card-bottom">
+                                    <img src="http://placehold.it/400x100" alt="cheesecake" class="module-card-img" />
+                                    <button class="module-card-button">See More</button>
+                                </div>
                             </div>
-                            <div><img src="http://placehold.it/300/eee/000&text=image3"
-                                    data-image-hd="http://placehold.it/600/eee/000&text=image3"
-                                    alt="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates veritatis similique, amet, maiores soluta recusandae cupiditate, sed perspiciatis fugit minima, sunt dolores cum earum deserunt illo ipsum!">
+
+                            <div class="module-card">
+                                <div class="module-card-title">Cheesecake</div>
+                                <div class="module-card-meta">
+                                    <div class="module-card-category">
+                                        <span class="fa fa-tag"></span>
+                                        <span>Desserts</span>
+                                    </div>
+                                    <div class="module-card-author">
+                                        <span class="fa fa-user"></span>
+                                        <span>Jenn Davis</span>
+                                    </div>
+                                </div> <!-- /module-card-meta -->
+
+                                <div class="module-card-bottom">
+                                    <img src="http://placehold.it/400x300" alt="cheesecake" class="module-card-img" />
+
+                                    <div>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                    </div>
+                                    <button class="module-card-button">See More</button>
+                                </div>
                             </div>
-                            <div><img src="http://placehold.it/300/222/fff&text=image4"
-                                    data-image-hd="http://placehold.it/600/222/fff&text=image4"
-                                    alt="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque laudantium dignissimos tenetur eos unde quidem repellat officiis nemo laboriosam necessitatibus deleniti commodi quis aliquid est atque tempora aut, nihil!">
+
+                            <div class="module-card">
+                                <div class="module-card-title">Cheesecake</div>
+                                <div class="module-card-meta">
+                                    <div class="module-card-category">
+                                        <span class="fa fa-tag"></span>
+                                        <span>Desserts</span>
+                                    </div>
+                                    <div class="module-card-author">
+                                        <span class="fa fa-user"></span>
+                                        <span>Jenn Davis</span>
+                                    </div>
+                                </div> <!-- /module-card-meta -->
+
+                                <div class="module-card-bottom">
+                                    <img src="http://placehold.it/400x120" alt="cheesecake" class="module-card-img" />
+
+                                    <div>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea ipsum sit
+                                            perspiciatis iusto commodi nihil tenetur veritatis adipisci sed? Illo nobis
+                                            similique in facilis libero ab officia ratione nesciunt fugiat.</p>
+                                    </div>
+                                    <button class="module-card-button">See More</button>
+                                </div>
                             </div>
-                            <div><img src="http://placehold.it/300/b47f99/000&text=image5"
-                                    data-image-hd="http://placehold.it/600/b47f99/000&text=image5"
-                                    alt="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto minus consequatur soluta quaerat itaque, laboriosam quis a facilis, cumque, deleniti quas aperiam voluptate dolore. Enim nostrum sit eaque, porro eligendi illo placeat?">
-                            </div>
-                            <div><img src="http://placehold.it/300/e1d400/000&text=image6"
-                                    data-image-hd="http://placehold.it/600/e1d400/000&text=image6"
-                                    alt="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi suscipit quam, id aliquam totam aperiam quas rem debitis voluptatem pariatur, illo accusamus facilis eius ipsa! Reprehenderit libero, quas iste repudiandae distinctio, quos dignissimos.">
+
+                            <div class="module-card">
+                                <div class="module-card-title">Cheesecake</div>
+                                <div class="module-card-meta">
+                                    <div class="module-card-category">
+                                        <span class="fa fa-tag"></span>
+                                        <span>Desserts</span>
+                                    </div>
+                                    <div class="module-card-author">
+                                        <span class="fa fa-user"></span>
+                                        <span>Jenn Davis</span>
+                                    </div>
+                                </div> <!-- /module-card-meta -->
+
+                                <div class="module-card-bottom">
+                                    <img src="http://placehold.it/400x200" alt="cheesecake" class="module-card-img" />
+
+                                    <div>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea ipsum sit
+                                            perspiciatis iusto commodi nihil tenetur veritatis adipisci sed? Illo nobis
+                                            similique in facilis libero ab officia ratione nesciunt fugiat.</p>
+                                    </div>
+
+                                    <button class="module-card-button">See More</button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <hr>
+
                 <div id="devContact">
-                    <h1>Contact Section </h1>
-                    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                    <div class="card">
+                        <h1>Contact Section </h1>
+
+
+
+
+                        <div id="contact-area">
+
+                            <form method="post" action="contactengine.php">
+
+
+                                <input type="text" name="Name" id="Name" placeholder="Full Name" />
+
+                                <input type="text" name="City" id="City" placeholder="City" />
+
+                                <input type="text" name="Email" id="Email" placeholder="Email" />
+
+                                <input type="text" name="Phone" id="Phone" placeholder="Phone" />
+
+                                <textarea name="Message" rows="20" cols="20" id="Message"
+                                    placeholder="Message"></textarea>
+
+                                <input type="submit" name="submit" value="Submit" class="submit-button" />
+                            </form>
+                        </div>
+
+
+
+
+                    </div>
                 </div>
 
 
