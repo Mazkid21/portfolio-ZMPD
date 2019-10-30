@@ -2,576 +2,804 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css">
-
-    <link rel="stylesheet" href="style.css">
-    <title>ZMPD</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css">
+  <link rel="stylesheet"
+    href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.11/css/lightgallery.css">
+  <link rel="stylesheet" href="style.css">
+  <title>ZMPD</title>
 </head>
 
 <body>
-    <div class="grid">
-        <!--Left side-->
-        <div id="photo" class="column effect-hover">
-            <div class="content photo">
-                <i class="fa fa-camera" aria-hidden="true"></i>
-                <h2>Go <span>photo</span></h2>
-                <h3>Do something amazing</h3>
-                <p>And Click</p>
-            </div>
-        </div>
-        <!--Right side-->
-        <div id="dev" class="column effect-hover">
-            <div class="content">
-                <i class="fa fa-code effect-hover" aria-hidden="true"></i>
-                <h2>Go <span>dev</span></h2>
-                <h3>Do something amazing</h3>
-                <p>And Click</p>
-            </div>
-        </div>
-        <!--Logo-->
-        <div id="logo">
+  <div class="grid">
+    <!--Left side-->
+    <div id="photo" class="column effect-hover">
+      <div class="content photo">
+        <i class="fa fa-camera" aria-hidden="true"></i>
+        <h2>Go <span>photo</span></h2>
+        <h3 style="border-bottom: 1px solid #000000;">Do something amazing</h3>
+        <p>And Click</p>
+      </div>
+    </div>
+    <!--Right side-->
+    <div id="dev" class="column effect-hover">
+      <div class="content">
+        <i class="fa fa-code effect-hover" aria-hidden="true"></i>
+        <h2>Go <span>dev</span></h2>
+        <h3>Do something amazing</h3>
+        <p>And Click</p>
+      </div>
+    </div>
+    <!--Logo-->
+    <div id="logo">
 
-            <img src="images/logoBW.png" />
-        </div>
-
-
+      <img src="images/logoBW.png" />
     </div>
 
-    <!--Left side content-->
-    <div id="photo-overlay" class="overlay">
 
-        <div class='wrapper'>
-            <div class='sidebar'>
+  </div>
 
-                <div class='title'>
-                    PHOTOGRAPHY
-                    <i class="icon fa fa-bars"></i>
-                </div>
-                <ul class='nav'>
-                    <li class="nav-li">
-                        <a href="#photoAbout" class="active">About</a>
-                    </li>
-                    <li class="nav-li">
-                        <a href="#photoPortfolio" class="">portfolio</a>
-                    </li>
-                    <li class="nav-li">
-                        <a href="#photoContact" class="">Contact</a>
-                    </li>
-                </ul>
+  <!--photo side content-->
+  <div id="photo-overlay" class="overlay">
 
-                <div class="close-icon">
-                    <div></div>
-                    <div></div>
-                </div>
+    <div class='wrapper'>
+      <div class='sidebar'>
 
-            </div>
-            <div class='content'>
-
-                <div id="photoAbout">
-
-
-                    <div class="card">
-                        <h1>Zach Maraziti | Photographer </h1>
-                        <div class="photo-vcard">
-                            <div class="photo-vcard-pic">
-                                <img src="https://scontent-den4-1.xx.fbcdn.net/v/t1.0-9/14191951_10208232425102981_7735399459185273756_n.jpg?_nc_cat=100&_nc_ht=scontent-den4-1.xx&oh=9b9adda2762d064a4330400d12717c4b&oe=5D2D6815"
-                                    alt="">
-                            </div>
-                            <ul class="photo-vcard-list">
-                                <li><i class="fa fa-envelope"></i>ziti@zachmarazitiphotography.com</li>
-                                <li><i class="fa fa-globe"></i>zmpd.com</li>
-                                <li><i class="fa fa-phone"></i>(970)452-9404</li>
-                                <li><i class="fa fa-map-marker-alt"></i>Aspen, CO</li>
-                            </ul>
-
-                        </div>
-
-
-                        <p> Born and raised in Aspen Colorado. I grew up skiing, playing
-                            hockey, baseball and running around the mountains. I love being outside and enjoying the
-                            beauty
-                            of the mountains.
-
-                            My love for photography started when I was very young. My mother worked for Mountain Photo
-                            and
-                            when I was six, I would go with her at night and help to develop all the film from the days
-                            shooting. That was my first taste for photography and I fell in love with it right away. As
-                            a
-                            teenager my mom worked at Anderson Ranch Art Center. During summer break I would go with my
-                            mom
-                            to work and hang out in the photography building. It was not until high school that I
-                            realized
-                            photography is what I wanted to do for a career, and I am now living that dream!
-
-                            Contact me for prints or a quote on any photography needs you may have.
-                        </p>
-                    </div>
-
-                </div>
-                <div id="photoPortfolio">
-                    <div class="card">
-
-                        <h1>portfolio Section </h1>
-                        <div class="portfolioImgs">
-
-                            <a class="grouped_elements fancyboxPhoto"
-                                href="https://www.dropbox.com/s/jjnb4z1enizk8d6/CI3A6098-Edit-Edit-2.jpg?raw=1"><img
-                                    src="https://www.dropbox.com/s/jjnb4z1enizk8d6/CI3A6098-Edit-Edit-2.jpg?raw=1"
-                                    alt="" /></a>
-                            <a class="grouped_elements fancyboxPhoto"
-                                href="https://www.dropbox.com/s/tor402zjvwoams2/CI3A8441.jpg?raw=1"><img
-                                    src="https://www.dropbox.com/s/tor402zjvwoams2/CI3A8441.jpg?raw=1" alt="" /></a>
-                            <a class="grouped_elements fancyboxPhoto"
-                                href="https://www.dropbox.com/s/unqnfucn9b5r4ft/CI3A1969.jpg?raw=1"><img
-                                    src="https://www.dropbox.com/s/unqnfucn9b5r4ft/CI3A1969.jpg?raw=1" alt="" /></a>
-                            <a class="grouped_elements fancyboxPhoto"
-                                href="https://www.dropbox.com/s/fgavvtt749cmeev/DSC00771.jpg?raw=1"><img
-                                    src="https://www.dropbox.com/s/fgavvtt749cmeev/DSC00771.jpg?raw=1" alt="" /></a>
-                            <a class="grouped_elements fancyboxPhoto"
-                                href="https://www.dropbox.com/s/ahqksjbywj0oeq4/CI3A2197.jpg?raw=1"><img
-                                    src="https://www.dropbox.com/s/ahqksjbywj0oeq4/CI3A2197.jpg?raw=1" alt="" /></a>
-                            <a class="grouped_elements fancyboxPhoto"
-                                href="https://www.dropbox.com/s/9rdvlcph123bcdr/DSC00378.jpg?raw=1"><img
-                                    src="https://www.dropbox.com/s/9rdvlcph123bcdr/DSC00378.jpg?raw=1" alt="" /></a>
-                            <a class="grouped_elements fancyboxPhoto"
-                                href="https://www.dropbox.com/s/0kvwtovyll05pn4/CI3A2209.jpg?raw=1"><img
-                                    src="https://www.dropbox.com/s/0kvwtovyll05pn4/CI3A2209.jpg?raw=1" alt="" /></a>
-                            <a class="grouped_elements fancyboxPhoto"
-                                href="https://www.dropbox.com/s/unqnfucn9b5r4ft/CI3A1969.jpg?raw=1"><img
-                                    src="https://www.dropbox.com/s/unqnfucn9b5r4ft/CI3A1969.jpg?raw=1" alt="" /></a>
-                            <a class="grouped_elements fancyboxPhoto"
-                                href="https://www.dropbox.com/s/5ityztivyy38xx8/CI3A2062-5.jpg?raw=1"><img
-                                    src="https://www.dropbox.com/s/5ityztivyy38xx8/CI3A2062-5.jpg?raw=1" alt="" /></a>
-                            <a class="grouped_elements fancyboxPhoto"
-                                href="https://www.dropbox.com/s/u1so9t2wi78isnj/CI3A3100.jpg?raw=1"><img
-                                    src="https://www.dropbox.com/s/u1so9t2wi78isnj/CI3A3100.jpg?raw=1" alt="" /></a>
-                            <a class="grouped_elements fancyboxPhoto"
-                                href="https://www.dropbox.com/s/y6geq93ok72s0xk/CI3A3992.jpg?raw=1"><img
-                                    src="https://www.dropbox.com/s/y6geq93ok72s0xk/CI3A3992.jpg?raw=1" alt="" /></a>
-                            <a class="grouped_elements fancyboxPhoto"
-                                href="https://www.dropbox.com/s/mxswubx3ys03nh5/CI3A4450-Edit-2.jpg?raw=1"><img
-                                    src="https://www.dropbox.com/s/mxswubx3ys03nh5/CI3A4450-Edit-2.jpg?raw=1"
-                                    alt="" /></a>
-                            <a class="grouped_elements fancyboxPhoto"
-                                href="https://www.dropbox.com/s/hk496frymd6elzv/CI3A4611-Edit.jpg?raw=1"><img
-                                    src="https://www.dropbox.com/s/hk496frymd6elzv/CI3A4611-Edit.jpg?raw=1"
-                                    alt="" /></a>
-                            <a class="grouped_elements fancyboxPhoto"
-                                href="https://www.dropbox.com/s/hgzdxr6vxcuo03x/CI3A5982.jpg?raw=1"><img
-                                    src="https://www.dropbox.com/s/hgzdxr6vxcuo03x/CI3A5982.jpg?raw=1" alt="" /></a>
-                            <a class="grouped_elements fancyboxPhoto"
-                                href="https://www.dropbox.com/s/wfvnojm51758gju/CI3A7156.jpg?raw=1"><img
-                                    src="https://www.dropbox.com/s/wfvnojm51758gju/CI3A7156.jpg?raw=1" alt="" /></a>
-                            <a class="grouped_elements fancyboxPhoto"
-                                href="https://www.dropbox.com/s/s539e9bu3vj2rkn/File%20Mar%2027%2C%2017%2002%2018.jpeg?raw=1"><img
-                                    src="https://www.dropbox.com/s/s539e9bu3vj2rkn/File%20Mar%2027%2C%2017%2002%2018.jpeg?raw=1"
-                                    alt="" /></a>
-                            <a class="grouped_elements fancyboxPhoto"
-                                href="https://www.dropbox.com/s/1y769013vg9hye5/NYEfirework2.jpg?raw=1"><img
-                                    src="https://www.dropbox.com/s/1y769013vg9hye5/NYEfirework2.jpg?raw=1" alt="" /></a>
-
-
-                        </div>
-                        <div id='collection-component-1569272957826'></div>
-                        <script type="text/javascript">
-                            /*<![CDATA[*/
-                            (function () {
-                                var scriptURL =
-                                    'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
-                                if (window.ShopifyBuy) {
-                                    if (window.ShopifyBuy.UI) {
-                                        ShopifyBuyInit();
-                                    } else {
-                                        loadScript();
-                                    }
-                                } else {
-                                    loadScript();
-                                }
-
-                                function loadScript() {
-                                    var script = document.createElement('script');
-                                    script.async = true;
-                                    script.src = scriptURL;
-                                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName(
-                                        'body')[0]).appendChild(script);
-                                    script.onload = ShopifyBuyInit;
-                                }
-
-                                function ShopifyBuyInit() {
-                                    var client = ShopifyBuy.buildClient({
-                                        domain: 'zmpd.myshopify.com',
-                                        storefrontAccessToken: 'NICE TRY LOSERS',
-                                    });
-                                    ShopifyBuy.UI.onReady(client).then(function (ui) {
-                                        ui.createComponent('collection', {
-                                            id: '149911011364',
-                                            node: document.getElementById(
-                                                'collection-component-1569272957826'),
-                                            moneyFormat: '%24%7B%7Bamount%7D%7D',
-                                            options: {
-                                                "product": {
-                                                    "styles": {
-                                                        "product": {
-                                                            "@media (min-width: 601px)": {
-                                                                "max-width": "calc(33.33333% - 30px)",
-                                                                "margin-left": "30px",
-                                                                "margin-bottom": "50px",
-                                                                "width": "calc(33.33333% - 30px)"
-                                                            },
-                                                            "img": {
-                                                                "height": "calc(100% - 15px)",
-                                                                "position": "absolute",
-                                                                "left": "0",
-                                                                "right": "0",
-                                                                "top": "0"
-                                                            },
-                                                            "imgWrapper": {
-                                                                "padding-top": "calc(75% + 15px)",
-                                                                "position": "relative",
-                                                                "height": "0"
-                                                            }
-                                                        }
-                                                    },
-                                                    "buttonDestination": "modal",
-                                                    "contents": {
-                                                        "options": false
-                                                    },
-                                                    "text": {
-                                                        "button": "View product"
-                                                    }
-                                                },
-                                                "productSet": {
-                                                    "styles": {
-                                                        "products": {
-                                                            "@media (min-width: 601px)": {
-                                                                "margin-left": "-30px"
-                                                            }
-                                                        }
-                                                    }
-                                                },
-                                                "modalProduct": {
-                                                    "contents": {
-                                                        "img": false,
-                                                        "imgWithCarousel": true,
-                                                        "button": false,
-                                                        "buttonWithQuantity": true
-                                                    },
-                                                    "styles": {
-                                                        "product": {
-                                                            "@media (min-width: 601px)": {
-                                                                "max-width": "100%",
-                                                                "margin-left": "0px",
-                                                                "margin-bottom": "0px"
-                                                            }
-                                                        }
-                                                    },
-                                                    "text": {
-                                                        "button": "Add to cart"
-                                                    }
-                                                },
-                                                "cart": {
-                                                    "text": {
-                                                        "total": "Subtotal",
-                                                        "button": "Checkout"
-                                                    },
-                                                    "contents": {
-                                                        "note": true
-                                                    }
-                                                }
-                                            },
-                                        });
-                                    });
-                                }
-                            })();
-                            /*]]>*/
-                        </script>
-                    </div>
-                </div>
-
-                <div id="photoContact">
-                    <div class="card">
-                        <h1>Contact Section </h1>
-                        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-                    </div>
-                </div>
-
-
-
-
-            </div>
-
-
-
-
+        <div class='title'>
+          PHOTOGRAPHY
+          <i class="icon fa fa-bars"></i>
         </div>
-    </div>
-    <!--Right side content-->
-    <div id="dev-overlay" class="overlay">
-        <div class='wrapper'>
-            <div class='sidebar'>
+        <ul class='nav'>
+          <!-- <li class="nav-li">
+                      <a href="#home" class="active">Intro</a>
+                  </li> -->
+          <li class="nav-li">
+            <a href="#work" class="">Work</a>
+          </li>
+          <li class="nav-li">
+            <a href="#shop" class="">Shop</a>
+          </li>
+          <li class="nav-li">
+            <a href="#about" class="">About</a>
+          </li>
+          <li class="nav-li">
+            <a href="#location" class="">Contact</a>
+          </li>
+          <li class="nav-li">
+            <a href="#" class="close-icon">Home</a>
+          </li>
+        </ul>
 
-                <div class='title'>
-                    DEVELOPMENT
-                    <i class="icon fa fa-bars"></i>
-                </div>
-                <ul class='nav'>
-                    <li class="nav-li">
-                        <a href="#devAbout" class="active">About</a>
-                    </li>
-                    <li class="nav-li">
-                        <a href="#devPortfolio" class="">portfolio</a>
-                    </li>
-                    <li class="nav-li">
-                        <a href="#devContact" class="">Contact</a>
-                    </li>
 
 
-                </ul>
+      </div>
+      <div class='content'>
 
-                <div class="close-icon">
-                    <div></div>
-                    <div></div>
-                </div>
-
+        <main>
+          <header class="section-1" id="home">
+            <div class="title-header">
+              <h1>Zach Maraziti</h1>
+              <h2>Photographer</h2>
             </div>
-            <div class='content'>
 
-                <div id="devAbout">
-                    <div class="card">
-                        <h1 style="margin-top: 0px;">ABOUT Section </h1>
-                        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque aliquet, magna in
-                            iaculis consequat, eros ex viverra magna, a viverra orci massa tempor nibh. Sed a consequat
-                            lectus. Fusce in aliquet augue, quis lobortis magna. Aenean varius aliquet magna in
-                            bibendum. Integer sagittis nulla quis arcu facilisis molestie. Sed placerat luctus leo, sit
-                            amet scelerisque nibh posuere sed. Integer luctus consectetur urna. Donec quis lobortis
-                            tortor. Fusce eget dapibus arcu.
 
-                            Duis varius aliquet quam, non pulvinar nisl sollicitudin sit amet. In feugiat dignissim
-                            dapibus. Duis aliquet, erat vel convallis euismod, nisl tellus efficitur nisi, et tristique
-                            sapien massa a ligula. Pellentesque habitant morbi tristique senectus et netus et malesuada
-                            fames ac turpis egestas. Donec dapibus porttitor dignissim. Fusce quam odio, efficitur quis
-                            quam interdum, aliquam vestibulum dui. Nulla facilisi. Pellentesque vel bibendum tellus.
-                            Proin tincidunt ac ipsum sed commodo. Etiam finibus molestie risus id lobortis. Morbi quis
-                            mauris vel justo imperdiet volutpat quis facilisis urna. Phasellus id augue faucibus,
-                            ultrices nibh eget, convallis orci.</p>
+          </header>
+
+          <section id="work" class="scroll-to">
+            <header>
+              <h3>Recent work</h3>
+            </header>
+            <div id="images-wrapper">
+
+              <ul id="lightgallery">
+                <li data-src="https://www.dropbox.com/s/rbpl6fi3zg6jfpn/IMG_0430.JPG?raw=1">
+                  <a href="">
+                    <img class="img-responsive" src="https://www.dropbox.com/s/rbpl6fi3zg6jfpn/IMG_0430.JPG?raw=1">
+                    <div class="gallery-poster">
+                      <img src="https://sachinchoolur.github.io/lightGallery/static/img/zoom.png">
                     </div>
-                </div>
-
-                <div id="devPortfolio">
-
-
-
-                    <div class="card">
-                        <h1>portfolio Section </h1>
-                        <div class="module-card-wrap">
-                            <div class="module-card">
-                                <div class="module-card-title">Cheesecake</div>
-                                <div class="module-card-meta">
-                                    <div class="module-card-category">
-                                        <span class="fa fa-tag"></span>
-                                        <span>Desserts</span>
-                                    </div>
-                                    <div class="module-card-author">
-                                        <span class="fa fa-user"></span>
-                                        <span>Jenn Davis</span>
-                                    </div>
-                                </div> <!-- /module-card-meta -->
-
-                                <div class="module-card-bottom">
-                                    <img src="http://placehold.it/400x150" alt="cheesecake" class="module-card-img" />
-
-                                    <div>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea ipsum sit
-                                            perspiciatis iusto commodi nihil tenetur veritatis adipisci sed? Illo nobis
-                                            similique in facilis libero ab officia ratione nesciunt fugiat.</p>
-                                    </div>
-
-                                    <button class="module-card-button">See More</button>
-                                </div>
-                            </div>
-
-                            <div class="module-card">
-                                <div class="module-card-title">Cheesecake</div>
-                                <div class="module-card-meta">
-                                    <div class="module-card-category">
-                                        <span class="fa fa-tag"></span>
-                                        <span>Desserts</span>
-                                    </div>
-                                    <div class="module-card-author">
-                                        <span class="fa fa-user"></span>
-                                        <span>Jenn Davis</span>
-                                    </div>
-                                </div> <!-- /module-card-meta -->
-
-                                <div class="module-card-bottom">
-                                    <img src="http://placehold.it/400x100" alt="cheesecake" class="module-card-img" />
-                                    <button class="module-card-button">See More</button>
-                                </div>
-                            </div>
-
-                            <div class="module-card">
-                                <div class="module-card-title">Cheesecake</div>
-                                <div class="module-card-meta">
-                                    <div class="module-card-category">
-                                        <span class="fa fa-tag"></span>
-                                        <span>Desserts</span>
-                                    </div>
-                                    <div class="module-card-author">
-                                        <span class="fa fa-user"></span>
-                                        <span>Jenn Davis</span>
-                                    </div>
-                                </div> <!-- /module-card-meta -->
-
-                                <div class="module-card-bottom">
-                                    <img src="http://placehold.it/400x300" alt="cheesecake" class="module-card-img" />
-
-                                    <div>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                    </div>
-                                    <button class="module-card-button">See More</button>
-                                </div>
-                            </div>
-
-                            <div class="module-card">
-                                <div class="module-card-title">Cheesecake</div>
-                                <div class="module-card-meta">
-                                    <div class="module-card-category">
-                                        <span class="fa fa-tag"></span>
-                                        <span>Desserts</span>
-                                    </div>
-                                    <div class="module-card-author">
-                                        <span class="fa fa-user"></span>
-                                        <span>Jenn Davis</span>
-                                    </div>
-                                </div> <!-- /module-card-meta -->
-
-                                <div class="module-card-bottom">
-                                    <img src="http://placehold.it/400x120" alt="cheesecake" class="module-card-img" />
-
-                                    <div>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea ipsum sit
-                                            perspiciatis iusto commodi nihil tenetur veritatis adipisci sed? Illo nobis
-                                            similique in facilis libero ab officia ratione nesciunt fugiat.</p>
-                                    </div>
-                                    <button class="module-card-button">See More</button>
-                                </div>
-                            </div>
-
-                            <div class="module-card">
-                                <div class="module-card-title">Cheesecake</div>
-                                <div class="module-card-meta">
-                                    <div class="module-card-category">
-                                        <span class="fa fa-tag"></span>
-                                        <span>Desserts</span>
-                                    </div>
-                                    <div class="module-card-author">
-                                        <span class="fa fa-user"></span>
-                                        <span>Jenn Davis</span>
-                                    </div>
-                                </div> <!-- /module-card-meta -->
-
-                                <div class="module-card-bottom">
-                                    <img src="http://placehold.it/400x200" alt="cheesecake" class="module-card-img" />
-
-                                    <div>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea ipsum sit
-                                            perspiciatis iusto commodi nihil tenetur veritatis adipisci sed? Illo nobis
-                                            similique in facilis libero ab officia ratione nesciunt fugiat.</p>
-                                    </div>
-
-                                    <button class="module-card-button">See More</button>
-                                </div>
-                            </div>
-                        </div>
+                  </a>
+                </li>
+                <li data-src="https://www.dropbox.com/s/9rdvlcph123bcdr/DSC00378.jpg?raw=1">
+                  <a href="">
+                    <img class="img-responsive" src="https://www.dropbox.com/s/9rdvlcph123bcdr/DSC00378.jpg?raw=1">
+                    <div class="gallery-poster">
+                      <img src="https://sachinchoolur.github.io/lightGallery/static/img/zoom.png">
                     </div>
-                </div>
-
-                <div id="devContact">
-                    <div class="card">
-                        <h1>Contact Section </h1>
-
-
-
-
-                        <div id="contact-area">
-
-                            <form method="post" action="contactengine.php">
-
-
-                                <input type="text" name="Name" id="Name" placeholder="Full Name" />
-
-                                <input type="text" name="City" id="City" placeholder="City" />
-
-                                <input type="text" name="Email" id="Email" placeholder="Email" />
-
-                                <input type="text" name="Phone" id="Phone" placeholder="Phone" />
-
-                                <textarea name="Message" rows="20" cols="20" id="Message"
-                                    placeholder="Message"></textarea>
-
-                                <input type="submit" name="submit" value="Submit" class="submit-button" />
-                            </form>
-                        </div>
-
-
-
-
+                  </a>
+                </li>
+                <li data-src="https://www.dropbox.com/s/fgavvtt749cmeev/DSC00771.jpg?raw=1">
+                  <a href="">
+                    <img class="img-responsive" src="https://www.dropbox.com/s/fgavvtt749cmeev/DSC00771.jpg?raw=1">
+                    <div class="gallery-poster">
+                      <img src="https://sachinchoolur.github.io/lightGallery/static/img/zoom.png">
                     </div>
-                </div>
-
-
-
+                  </a>
+                </li>
+                <li data-src="https://www.dropbox.com/s/ahqksjbywj0oeq4/CI3A2197.jpg?raw=1">
+                  <a href="">
+                    <img class="img-responsive" src="https://www.dropbox.com/s/ahqksjbywj0oeq4/CI3A2197.jpg?raw=1">
+                    <div class="gallery-poster">
+                      <img src="https://sachinchoolur.github.io/lightGallery/static/img/zoom.png">
+                    </div>
+                  </a>
+                </li>
+                <li data-src="https://www.dropbox.com/s/yvlgsvulyjqcz2q/_I3A4358-10.jpg?raw=1">
+                  <a href="">
+                    <img class="img-responsive" src="https://www.dropbox.com/s/yvlgsvulyjqcz2q/_I3A4358-10.jpg?raw=1">
+                    <div class="gallery-poster">
+                      <img src="https://sachinchoolur.github.io/lightGallery/static/img/zoom.png">
+                    </div>
+                  </a>
+                </li>
+                <li data-src="https://www.dropbox.com/s/7elb23k8lbrhr46/CI3A1966.jpg?raw=1">
+                  <a href="">
+                    <img class="img-responsive" src="https://www.dropbox.com/s/7elb23k8lbrhr46/CI3A1966.jpg?raw=1">
+                    <div class="gallery-poster">
+                      <img src="https://sachinchoolur.github.io/lightGallery/static/img/zoom.png">
+                    </div>
+                  </a>
+                </li>
+                <li data-src="https://www.dropbox.com/s/n7z0u4wlhmpilef/DSC00378.jpg?raw=1">
+                  <a href="">
+                    <img class="img-responsive" src="https://www.dropbox.com/s/n7z0u4wlhmpilef/DSC00378.jpg?raw=1">
+                    <div class="gallery-poster">
+                      <img src="https://sachinchoolur.github.io/lightGallery/static/img/zoom.png">
+                    </div>
+                  </a>
+                </li>
+                <li data-src="https://www.dropbox.com/s/x5mz9eknpi3246q/10Trail-6.jpg?raw=1">
+                  <a href="">
+                    <img class="img-responsive" src="https://www.dropbox.com/s/x5mz9eknpi3246q/10Trail-6.jpg?raw=1">
+                    <div class="gallery-poster">
+                      <img src="https://sachinchoolur.github.io/lightGallery/static/img/zoom.png">
+                    </div>
+                  </a>
+                </li>
+                <li data-src="https://www.dropbox.com/s/vhg4palukrjrsyc/CI3A5982.jpg?raw=1">
+                  <a href="">
+                    <img class="img-responsive" src="https://www.dropbox.com/s/vhg4palukrjrsyc/CI3A5982.jpg?raw=1">
+                    <div class="gallery-poster">
+                      <img src="https://sachinchoolur.github.io/lightGallery/static/img/zoom.png">
+                    </div>
+                  </a>
+                </li>
+                <li data-src="https://www.dropbox.com/s/uakbz7f01ws24bt/CI3A2209.jpg?raw=1">
+                  <a href="">
+                    <img class="img-responsive" src="https://www.dropbox.com/s/uakbz7f01ws24bt/CI3A2209.jpg?raw=1">
+                    <div class="gallery-poster">
+                      <img src="https://sachinchoolur.github.io/lightGallery/static/img/zoom.png">
+                    </div>
+                  </a>
+                </li>
+                <li data-src="https://www.dropbox.com/s/a307hdw0mc9g0tc/CI3A4950-Edit-2-2.jpg?raw=1">
+                  <a href="">
+                    <img class="img-responsive"
+                      src="https://www.dropbox.com/s/a307hdw0mc9g0tc/CI3A4950-Edit-2-2.jpg?raw=1">
+                    <div class="gallery-poster">
+                      <img src="https://sachinchoolur.github.io/lightGallery/static/img/zoom.png">
+                    </div>
+                  </a>
+                </li>
+                <li
+                  data-src="https://www.dropbox.com/s/u3cxm3hrp9onk6l/StarStaX_CI3A9529-1-CI3A9593-65_gap_filling-Edit-1.jpg?raw=1">
+                  <a href="">
+                    <img class="img-responsive"
+                      src="https://www.dropbox.com/s/u3cxm3hrp9onk6l/StarStaX_CI3A9529-1-CI3A9593-65_gap_filling-Edit-1.jpg?raw=1">
+                    <div class="gallery-poster">
+                      <img src="https://sachinchoolur.github.io/lightGallery/static/img/zoom.png">
+                    </div>
+                  </a>
+                </li>
+                <li data-src="https://www.dropbox.com/s/wiwdobmijw2jm47/CI3A2062-5.jpg?raw=1">
+                  <a href="">
+                    <img class="img-responsive" src="https://www.dropbox.com/s/wiwdobmijw2jm47/CI3A2062-5.jpg?raw=1">
+                    <div class="gallery-poster">
+                      <img src="https://sachinchoolur.github.io/lightGallery/static/img/zoom.png">
+                    </div>
+                  </a>
+                </li>
+                <li data-src="https://www.dropbox.com/s/ufrs02hu5bkfqol/CI3A4611-Edit.jpg?raw=1">
+                  <a href="">
+                    <img class="img-responsive" src="https://www.dropbox.com/s/ufrs02hu5bkfqol/CI3A4611-Edit.jpg?raw=1">
+                    <div class="gallery-poster">
+                      <img src="https://sachinchoolur.github.io/lightGallery/static/img/zoom.png">
+                    </div>
+                  </a>
+                </li>
+                <li data-src="https://www.dropbox.com/s/u1so9t2wi78isnj/CI3A3100.jpg?raw=1">
+                  <a href="">
+                    <img class="img-responsive" src="https://www.dropbox.com/s/u1so9t2wi78isnj/CI3A3100.jpg?raw=1">
+                    <div class="gallery-poster">
+                      <img src="https://sachinchoolur.github.io/lightGallery/static/img/zoom.png">
+                    </div>
+                  </a>
+                </li>
+                <li data-src="https://www.dropbox.com/s/u0wo4v9admtdbvq/CI3A1377%20%281%29.jpg?raw=1">
+                  <a href="">
+                    <img class="img-responsive"
+                      src="https://www.dropbox.com/s/u0wo4v9admtdbvq/CI3A1377%20%281%29.jpg?raw=1">
+                    <div class="gallery-poster">
+                      <img src="https://sachinchoolur.github.io/lightGallery/static/img/zoom.png">
+                    </div>
+                  </a>
+                </li>
+                <li data-src="https://www.dropbox.com/s/e33ub0svbm0fywv/CI3A1053.jpg?raw=1">
+                  <a href="">
+                    <img class="img-responsive" src="https://www.dropbox.com/s/e33ub0svbm0fywv/CI3A1053.jpg?raw=1">
+                    <div class="gallery-poster">
+                      <img src="https://sachinchoolur.github.io/lightGallery/static/img/zoom.png">
+                    </div>
+                  </a>
+                </li>
+                <li data-src="https://www.dropbox.com/s/jjnb4z1enizk8d6/CI3A6098-Edit-Edit-2.jpg?raw=1">
+                  <a href="">
+                    <img class="img-responsive"
+                      src="https://www.dropbox.com/s/jjnb4z1enizk8d6/CI3A6098-Edit-Edit-2.jpg?raw=1">
+                    <div class="gallery-poster">
+                      <img src="https://sachinchoolur.github.io/lightGallery/static/img/zoom.png">
+                    </div>
+                  </a>
+                </li>
+                <li data-src="https://www.dropbox.com/s/tor402zjvwoams2/CI3A8441.jpg?raw=1">
+                  <a href="">
+                    <img class="img-responsive" src="https://www.dropbox.com/s/tor402zjvwoams2/CI3A8441.jpg?raw=1">
+                    <div class="gallery-poster">
+                      <img src="https://sachinchoolur.github.io/lightGallery/static/img/zoom.png">
+                    </div>
+                  </a>
+                </li>
+                <li data-src="https://www.dropbox.com/s/unqnfucn9b5r4ft/CI3A1969.jpg?raw=1">
+                  <a href="">
+                    <img class="img-responsive" src="https://www.dropbox.com/s/unqnfucn9b5r4ft/CI3A1969.jpg?raw=1">
+                    <div class="gallery-poster">
+                      <img src="https://sachinchoolur.github.io/lightGallery/static/img/zoom.png">
+                    </div>
+                  </a>
+                </li>
+              </ul>
+              <!-- <img onclick="openModal();currentSlide(1)" class="hover-shadow cursor"
+                src="https://www.dropbox.com/s/rbpl6fi3zg6jfpn/IMG_0430.JPG?raw=1" alt="">
+              <img onclick="openModal();currentSlide(2)" class="hover-shadow cursor"
+                src="https://www.dropbox.com/s/9rdvlcph123bcdr/DSC00378.jpg?raw=1" alt="" />
+              <img onclick="openModal();currentSlide(3)" class="hover-shadow cursor"
+                src="https://www.dropbox.com/s/fgavvtt749cmeev/DSC00771.jpg?raw=1" alt="" />
+              <img onclick="openModal();currentSlide(4)" class="hover-shadow cursor"
+                src="https://www.dropbox.com/s/ahqksjbywj0oeq4/CI3A2197.jpg?raw=1" alt="" />
+              <img onclick="openModal();currentSlide(5)" class="hover-shadow cursor"
+                src="https://www.dropbox.com/s/yvlgsvulyjqcz2q/_I3A4358-10.jpg?raw=1" alt="">
+              <img onclick="openModal();currentSlide(6)" class="hover-shadow cursor"
+                src="https://www.dropbox.com/s/7elb23k8lbrhr46/CI3A1966.jpg?raw=1" alt="">
+              <img onclick="openModal();currentSlide(7)" class="hover-shadow cursor"
+                src="https://www.dropbox.com/s/n7z0u4wlhmpilef/DSC00378.jpg?raw=1" alt="">
+              <img onclick="openModal();currentSlide(8)" class="hover-shadow cursor"
+                src="https://www.dropbox.com/s/x5mz9eknpi3246q/10Trail-6.jpg?raw=1" alt="">
+              <img onclick="openModal();currentSlide(9)" class="hover-shadow cursor"
+                src="https://www.dropbox.com/s/vhg4palukrjrsyc/CI3A5982.jpg?raw=1" alt="">
+              <img onclick="openModal();currentSlide(10)" class="hover-shadow cursor"
+                src="https://www.dropbox.com/s/uakbz7f01ws24bt/CI3A2209.jpg?raw=1" alt="">
+              <img onclick="openModal();currentSlide(11)" class="hover-shadow cursor"
+                src="https://www.dropbox.com/s/a307hdw0mc9g0tc/CI3A4950-Edit-2-2.jpg?raw=1" alt="">
+              <img onclick="openModal();currentSlide(12)" class="hover-shadow cursor"
+                src="https://www.dropbox.com/s/u3cxm3hrp9onk6l/StarStaX_CI3A9529-1-CI3A9593-65_gap_filling-Edit-1.jpg?raw=1"
+                alt="">
+              <img onclick="openModal();currentSlide(13)" class="hover-shadow cursor"
+                src="https://www.dropbox.com/s/wiwdobmijw2jm47/CI3A2062-5.jpg?raw=1" alt="">
+              <img onclick="openModal();currentSlide(14)" class="hover-shadow cursor"
+                src="https://www.dropbox.com/s/ufrs02hu5bkfqol/CI3A4611-Edit.jpg?raw=1" alt="">
+              <img onclick="openModal();currentSlide(15)" class="hover-shadow cursor"
+                src="https://www.dropbox.com/s/u1so9t2wi78isnj/CI3A3100.jpg?raw=1" alt="">
+              <img onclick="openModal();currentSlide(16)" class="hover-shadow cursor"
+                src="https://www.dropbox.com/s/u0wo4v9admtdbvq/CI3A1377%20%281%29.jpg?raw=1" alt="">
+              <img onclick="openModal();currentSlide(17)" class="hover-shadow cursor"
+                src="https://www.dropbox.com/s/e33ub0svbm0fywv/CI3A1053.jpg?raw=1" alt="">
+              <img onclick="openModal();currentSlide(18)" class="hover-shadow cursor"
+                src="https://www.dropbox.com/s/jjnb4z1enizk8d6/CI3A6098-Edit-Edit-2.jpg?raw=1" alt="" />
+              <img onclick="openModal();currentSlide(19)" class="hover-shadow cursor"
+                src="https://www.dropbox.com/s/tor402zjvwoams2/CI3A8441.jpg?raw=1" alt="" />
+              <img onclick="openModal();currentSlide(20)" class="hover-shadow cursor"
+                src="https://www.dropbox.com/s/unqnfucn9b5r4ft/CI3A1969.jpg?raw=1" alt="" /> -->
             </div>
-        </div>
+
+          </section>
+
+          <section id="shop" class="scroll-to">
+            <header>
+              <h3>Shop</h3>
+            </header>
+
+            <div class="row">
+              <div class="column">
+                <div id='collection-component-1572132323818'></div>
+              </div>
+              <div class="column">
+                <div id='collection-component-1572132363389'></div>
+              </div>
+              <div class="column">
+                <div id='collection-component-1572132399183'></div>
+              </div>
+            </div>
+          </section>
+
+          <section id="about" class="scroll-to">
+            <header>
+              <h3>About Me</h3>
+            </header>
+
+            <section class="about-content">
+              <p>
+                <span id="lead">Hello. My name is Zach Maraziti, owner of ZMPD.</span> My love of photography began at
+                an early age while watching my Mother shoot and develop her own film. Some of my early childhood
+                experiences include working alongside her on the development process and learning how to compose photos
+                through observation of her work.
+              </p>
+
+              <p> As a teenager, I would spend most of my summers at the Anderson Ranch Arts Center. My mother worked at
+                the Ranch and while she ran art classes and workshops, I would venture to the photography building.
+                Through those experiences, I was fortunate enough to learn from the artists creating in the studio and
+                be exposed to unique styles of photography. </p>
+
+              <p>Shooting photos has always been one of my biggest passions in life, and it is obvious to me that this
+                began with the exposure I had to art and photography at an early age. I am grateful not only for those
+                memories and experiences but to be able to carry that passion into my career. Projects I’ve worked on
+                range from photographing and videoing skiing in Japan for Polartec to shooting a statue of a bear at the
+                Marron Bells for the Buddy Program to Xgames photos for the ESPN. While my main focus is shooting
+                landscapes, I am always open to new opportunities. If you have an idea in mind, please feel free to
+                reach out to me via email and we’ll begin a conversation about your vision.
+              </p>
 
 
+            </section>
+          </section>
+
+          <section id="location" class="scroll-to">
+            <header>
+              <h3>Contact Info</h3>
+            </header>
+            <div class="contact-info myrow-halves">
+              <div class="col"><i class="fa fa-mobile fa-3x" aria-hidden="true"></i>
+                <p>Mobile | 970.452.9404</p>
+              </div>
+              <div class="col"><i class="fa fa-envelope fa-3x" aria-hidden="true"></i>
+                <p>E-mail | zach@zmpd.app</p>
+              </div>
+            </div>
+
+          </section>
+
+          <section id="contact" class="scroll-to">
+            <header style="padding: 0px 18px;">
+              <h5>Or, feel free to drop me a line below</h5>
+            </header>
+
+            <form action="#" class="col" method="post">
+              <fieldset>
+                <legend for="name">Name</legend>
+                <input type="text" id="name" name="user_name" />
+                <legend for="mail">E-mail</legend>
+                <input type="text" id="email" name="user_mail" />
+                <legend for="msg">Message</legend>
+                <textarea id="msg" name="user_message"></textarea>
+                <input class="link-btn-solid" type="submit" value="Send" />
+                <input type="text" name="_gotcha" style="display:none" />
+              </fieldset>
+            </form>
+          </section>
+
+          <footer>
+
+            <div class="myrow">
+              <div class="col">
+                Copy &copy 2018
+              </div>
+            </div>
+
+          </footer>
+
+        </main>
+
+
+
+      </div>
     </div>
 
-    <div id="photo-single" class="overlay">
-        <div class="grid">
-            <div class="column">
-                <div class="portfolio-content">
-                    <h1> Photo </h1>
-                    <h1> YAY </h1>
-                    <h1> YAY </h1>
-                    <h1> YAY </h1>
-                    <h1> YAY </h1>
-                </div>
-            </div>
+  </div>
+  <!--dev side content-->
+  <div id="dev-overlay" class="overlay">
+    <div class='wrapper'>
+      <div class='sidebar'>
+
+        <div class='title'>
+          DEVELOPMENT
+          <i class="icon fa fa-bars"></i>
         </div>
+        <ul class='nav'>
+          <!-- <li class="nav-li">
+                          <a href="#homeDev" class="active">Intro</a>
+                      </li> -->
+
+          <li class="nav-li">
+            <a href="#aboutDev" class="">About</a>
+          </li>
+          <li class="nav-li">
+            <a href="#workDev" class="">portfolio</a>
+          </li>
+          <li class="nav-li">
+            <a href="#locationDev" class="">Contact</a>
+          </li>
+          <li class="nav-li">
+            <a href="#" class="close-icon">Home</a>
+          </li>
+
+        </ul>
+
         <div class="close-icon">
-            <div></div>
-            <div></div>
+          <div></div>
+          <div></div>
         </div>
-    </div>
 
-    <div id="dev-single" class="overlay">
-        <div class="grid">
-            <div class="column">
-                <div class="portfolio-content">
-                    <h1> DEV </h1>
-                    <h1> YAY yy</h1>
-                    <h1> YAY yy</h1>
-                    <h1> YAY </h1>
-                    <h1> YAY </h1>
-                </div>
+      </div>
+      <div class='content'>
+
+        <main>
+          <header class="section-1" id="homeDev">
+            <div class="title-header">
+              <h1>Zach Maraziti</h1>
+              <h2>Full Stack Developer</h2>
             </div>
-        </div>
-        <div class="close-icon">
-            <div></div>
-            <div></div>
-        </div>
+
+
+          </header>
+
+          <section id="workDev" class="scroll-to">
+            <header>
+              <h3>Recent work</h3>
+            </header>
+
+            <div class="row">
+              <div class="column">
+                <div class="IA_window">
+                  <div class="bar">
+                    <div class="buttons">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </div>
+                    <p>wileymaple</p>
+                    <span class="full_scr"><i class="material-icons">&#xE5D0;</i></span>
+                    <a class="link" href="http://wileymaple.com" target="blank">http://wileymaple.com</a>
+                  </div>
+                  <div class="site">
+                    <img src="images/dev/wiley.png" alt="" />
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="column">
+                <div class="IA_window">
+                  <div class="bar">
+                    <div class="buttons">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </div>
+                    <p>No Lift One</p>
+                    <span class="full_scr"><i class="material-icons">&#xE5D0;</i></span>
+                    <a class="link" href="http://noliftone.com" target="blank">http://noliftone.com</a>
+                  </div>
+                  <div class="site">
+                    <img src="images/dev/noLiftOne.png" alt="" />
+                  </div>
+                </div>
+              </div>
+              <div class="column">
+                <div class="IA_window">
+                  <div class="bar">
+                    <div class="buttons">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </div>
+                    <p>B RockHill</p>
+                    <span class="full_scr"><i class="material-icons">&#xE5D0;</i></span>
+                    <a class="link" href="http://brockhill.com" target="blank">http://brockhill.com</a>
+                  </div>
+                  <div class="site">
+                    <img src="images/dev/bRockHill.png" alt="" />
+                  </div>
+                </div>
+              </div>
+              <div class="column">
+                <div class="IA_window">
+                  <div class="bar">
+                    <div class="buttons">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </div>
+                    <p>Moon Man</p>
+                    <span class="full_scr"><i class="material-icons">&#xE5D0;</i></span>
+                    <a class="link" href="http://fullmoonaspen.com" target="blank">http://fullmoonaspen.com</a>
+                  </div>
+                  <div class="site">
+                    <img src="images/dev/moonMan.png" alt="" />
+                  </div>
+                </div>
+              </div>
+              <div class="column">
+                <div class="IA_window">
+                  <div class="bar">
+                    <div class="buttons">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </div>
+                    <p>Mazdaddy</p>
+                    <span class="full_scr"><i class="material-icons">&#xE5D0;</i></span>
+                    <a class="link" href="http://mazdaddy.com" target="blank">http://mazdaddy.com</a>
+                  </div>
+                  <div class="site">
+                    <img src="images/dev/mazdaddy.png" alt="" />
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+
+
+          <section id="aboutDev" class="scroll-to">
+            <header>
+              <h3>About Me</h3>
+            </header>
+
+            <section class="about-content">
+
+              <p>
+                <span id="lead">Hello. My name is Zach Maraziti.</span> I am a Full Stack devloper from Aspen, Colorado.
+                I've always been drawn to the overlap between design and development. My skills are broad: from
+                photography to design, front end to back end development. I enjoy each aspect, and love building sites &
+                mobile apps from start to finish.
+              </p>
+              <br>
+              <header>
+                <h3>Tech I Love</h3>
+              </header>
+              <div class="row">
+
+                <div class="col s6 m2 l2">
+                  <h1><i class="devicon-html5-plain-wordmark"></i></h1>
+                </div>
+                <div class="col s6 m2 l2">
+                  <h1><i class="devicon-css3-plain-wordmark"></i></h1>
+                </div>
+                <div class="col s6 m2 l2">
+                  <h1><i class="devicon-javascript-plain"></i></h1>
+                </div>
+                <div class="col s6 m2 l2">
+                  <h1><i class="devicon-nodejs-plain-wordmark"></i></h1>
+
+                </div>
+                <div class="col s6 m2 l2">
+                  <h1><i class="devicon-angularjs-plain"></i></h1>
+
+                </div>
+                <div class="col s6 m2 l2">
+                  <h1><i class="devicon-react-original-wordmark"></i></h1>
+
+                </div>
+                <div class="col s6 m2 l2">
+                  <h1><i class="devicon-jquery-plain-wordmark"></i></h1>
+                </div>
+                <div class="col s6 m2 l2">
+                  <h1><i class="devicon-gulp-plain"></i></h1>
+                </div>
+                <div class="col s6 m2 l2">
+                  <h1><i class="devicon-express-original-wordmark"></i></h1>
+                </div>
+                <div class="col s6 m2 l2">
+                  <h1><i class="devicon-mongodb-plain-wordmark"></i></h1>
+                </div>
+                <div class="col s6 m2 l2">
+                  <h1><i class="devicon-postgresql-plain-wordmark"></i></h1>
+                </div>
+                <div class="col s6 m2 l2">
+                  <h1><i class="devicon-typescript-plain"></i></h1>
+                </div>
+                <div class="col s6 m2 l2">
+                  <h1><i class="devicon-mocha-plain"></i></h1>
+                </div>
+                <div class="col s6 m2 l2">
+                  <h1><i class="devicon-sass-original"></i></h1>
+                </div>
+                <div class="col s6 m2 l2">
+                  <h1><i class="devicon-photoshop-line"></i></h1>
+                </div>
+                <div class="col s6 m2 l2">
+                  <h1><i class="devicon-github-plain-wordmark"></i></h1>
+                </div>
+                <div class="col s6 m2 l2">
+                  <h1><i class="devicon-wordpress-plain-wordmark"></i></h1>
+                </div>
+                <div class="col s6 m2 l2">
+                  <h1><i class="devicon-bootstrap-plain-wordmark"></i></h1>
+                </div>
+              </div>
+            </section>
+          </section>
+
+          <section id="locationDev" class="scroll-to">
+            <header>
+              <h3>Contact Info</h3>
+            </header>
+            <div class="contact-info myrow-halves">
+              <div class="col"><i class="fa fa-mobile fa-3x" aria-hidden="true"></i>
+                <p>Mobile | 970.452.0404</p>
+              </div>
+              <div class="col"><i class="fa fa-envelope fa-3x" aria-hidden="true"></i>
+                <p>E-mail | zach@zmpd.app</p>
+              </div>
+            </div>
+
+          </section>
+
+          <section id="contactDev" class="scroll-to">
+            <header style="padding: 0px 18px;">
+              <h5>Or, feel free to drop me a line below</h5>
+            </header>
+
+            <form action="#" class="col" method="post">
+              <fieldset>
+                <legend for="name">Name</legend>
+                <input type="text" id="name" name="user_name" />
+                <legend for="mail">E-mail</legend>
+                <input type="text" id="email" name="user_mail" />
+                <legend for="msg">Message</legend>
+                <textarea id="msg" name="user_message"></textarea>
+                <input class="link-btn-solid" type="submit" value="Send" />
+                <input type="text" name="_gotcha" style="display:none" />
+              </fieldset>
+            </form>
+          </section>
+
+          <footer>
+            <div class="myrow">
+              <div class="col">
+                <i class="fa fa-facebook-f fa-lg" aria-hidden="true"></i>
+                <i class="fa fa-twitter fa-lg" aria-hidden="true"></i>
+                <i class="fa fa-instagram fa-lg" aria-hidden="true"></i>
+                <i class="fa fa-snapchat fa-lg" aria-hidden="true"></i>
+                <i class="fa fa-linkedin fa-lg" aria-hidden="true"></i>
+                <i class="fa fa-google-plus fa-lg" aria-hidden="true"></i>
+                <i class="fa fa-tumblr fa-lg" aria-hidden="true"></i>
+              </div>
+            </div>
+            <div class="myrow">
+              <div class="col">
+                Copy &copy 2018
+              </div>
+            </div>
+
+          </footer>
+
+        </main>
+
+
+
+      </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
-    <script src="script.js"></script>
+
+  </div>
+
+  <!--         <div id="photo-single" class="overlay">
+          <div class="grid">
+              <div class="column">
+                  <div class="portfolio-content">
+                      <h1> Photo </h1>
+                      <h1> YAY </h1>
+                      <h1> YAY </h1>
+                      <h1> YAY </h1>
+                      <h1> YAY </h1>
+                  </div>
+              </div>
+          </div>
+          <div class="close-icon">
+              <div></div>
+              <div></div>
+          </div>
+      </div>
+
+      <div id="dev-single" class="overlay">
+          <div class="grid">
+              <div class="column">
+                  <div class="portfolio-content">
+                      <h1> DEV </h1>
+                      <h1> YAY yy</h1>
+                      <h1> YAY yy</h1>
+                      <h1> YAY </h1>
+                      <h1> YAY </h1>
+                  </div>
+              </div>
+          </div>
+          <div class="close-icon">
+              <div></div>
+              <div></div>
+          </div>
+      </div> -->
+  <!-- <script>
+    function openModal() {
+      document.getElementById("myModal").style.display = "block";
+    }
+
+    function closeModal() {
+      document.getElementById("myModal").style.display = "none";
+    }
+
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("demo");
+      var captionText = document.getElementById("caption");
+      if (n > slides.length) { slideIndex = 1 }
+      if (n < 1) { slideIndex = slides.length }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+      captionText.innerHTML = dots[slideIndex - 1].alt;
+    }
+  </script> -->
+  <script src="https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+  <script src="https://cdn.jsdelivr.net/picturefill/2.3.1/picturefill.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.11/js/lightgallery-all.min.js"></script>
+
+  <script src="script.js"></script>
+
 </body>
 
 </html>
