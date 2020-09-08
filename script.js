@@ -2,7 +2,15 @@ $(document).ready(function () {
   ShopifyBuyInit();
 
   $('#lightgallery').lightGallery({
-    pager: true
+    pager: true,
+    download: false,
+    hash: false,
+    hideBarsDelay: 2000
+
+    // thumbnail: true,
+    // showThumbByDefault: false,
+    // animateThumb: false
+
   });
 
   $("#photo .content").click(function () {
@@ -100,15 +108,7 @@ $(document).ready(function () {
 
   });
 
-  var FancYB = $('.fancyboxPhoto');
-  FancYB.fancybox({
-    openEffect: 'fade',
-    closeEffect: 'fade',
-    padding: 0,
-    closeBtn: true,
 
-  });
-  FancYB.attr('rel', 'gallery');
 
 
 
