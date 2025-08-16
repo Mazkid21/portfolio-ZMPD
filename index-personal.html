@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Zach Maraziti - Full-stack developer specializing in resort technology and system integrations">
+    
+    <title>Zach Maraziti - Developer Portfolio</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="style-portfolio.css">
+</head>
+<body>
+    <!-- Simple Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="#home">zach maraziti</a>
+            </div>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="#about" class="nav-link">about</a></li>
+                <li><a href="#work" class="nav-link">work</a></li>
+                <li><a href="#projects" class="nav-link">projects</a></li>
+                <li><a href="#contact" class="nav-link">contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section - More Personal -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-intro">
+                    <h1>Hey, I'm Zach 👋</h1>
+                    <p class="hero-subtitle">I'm a full-stack developer who spent 9 years working in ski resorts before transitioning to code. Now I help resorts untangle their tech mess.</p>
+                    <p class="hero-detail">Currently freelancing through ZMPD, building integrations that actually work for the people using them every day.</p>
+                    <div class="hero-links">
+                        <a href="#work" class="link-arrow">See my work <span>→</span></a>
+                        <a href="https://github.com/yourgithub" target="_blank" class="link-icon"><i class="fab fa-github"></i></a>
+                        <a href="https://linkedin.com/in/zacharymaraziti" target="_blank" class="link-icon"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="hero-code">
+                    <pre><code><span class="comment">// Current status</span>
+<span class="keyword">const</span> <span class="variable">zach</span> = {
+  <span class="property">location</span>: <span class="string">"Aspen, CO"</span>,
+  <span class="property">working_on</span>: <span class="string">"Sugar Bowl integrations"</span>,
+  <span class="property">learning</span>: <span class="string">"GraphQL"</span>,
+  <span class="property">coffee_cups_today</span>: <span class="number">3</span>,
+  <span class="property">available</span>: <span class="boolean">true</span>
+};</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section - More Personal -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I grew up in Aspen and spent most of my career in the ski industry - first at Aspen Skiing Company for 6 years, then at Arapahoe Basin as a Product Manager. Along the way, I realized I loved solving technical problems more than meetings about meetings.</p>
+                    
+                    <p>So I taught myself to code (shoutout to General Assembly), started freelancing in 2017, and never looked back. Turns out, understanding how resorts actually operate makes building their software a lot easier.</p>
+                    
+                    <p>These days, I mostly work on integrations - connecting POS systems to ticketing, syncing databases, building APIs. It's not glamorous, but when you save a lift ops team 40 hours a week of manual data entry, it feels pretty good.</p>
+                    
+                    <p>When I'm not coding, you'll find me skiing, mountain biking, or trying to keep my houseplants alive (with mixed success).</p>
+                </div>
+                
+                <div class="about-skills">
+                    <h3>Tech I work with:</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">GraphQL</span>
+                        <span class="skill-tag">REST APIs</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">AWS</span>
+                    </div>
+                    
+                    <h3>Resort systems I've integrated:</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">RTPOne</span>
+                        <span class="skill-tag">Siriusware</span>
+                        <span class="skill-tag">SKIDATA</span>
+                        <span class="skill-tag">Enviso</span>
+                        <span class="skill-tag">Square</span>
+                        <span class="skill-tag">Shopify</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Section - Real Portfolio -->
+    <section id="work" class="work">
+        <div class="container">
+            <h2>Recent Work</h2>
+            <div class="work-grid">
+                <div class="work-item featured">
+                    <span class="work-year">2024 - Present</span>
+                    <h3>Sugar Bowl Resort - Locker System Integration</h3>
+                    <p>Built a real-time sync between their RTPOne POS and Enviso access control. What used to take staff 40+ hours per week now happens automatically.</p>
+                    <div class="work-tech">
+                        <span>Node.js</span>
+                        <span>PostgreSQL</span>
+                        <span>REST APIs</span>
+                        <span>Webhooks</span>
+                    </div>
+                    <div class="work-details">
+                        <h4>The Problem:</h4>
+                        <p>Staff were manually entering locker assignments from the POS into the access system. During busy weekends, guests waited 20+ minutes for locker access.</p>
+                        
+                        <h4>My Solution:</h4>
+                        <ul>
+                            <li>Built middleware to translate between RTPOne and Enviso APIs</li>
+                            <li>Implemented real-time webhook processing for instant updates</li>
+                            <li>Added retry logic and error handling for network issues</li>
+                            <li>Created admin dashboard for monitoring sync status</li>
+                        </ul>
+                        
+                        <h4>Results:</h4>
+                        <p>100% automated process, zero manual entry errors, happy guests, happier staff.</p>
+                    </div>
+                </div>
+                
+                <div class="work-item">
+                    <span class="work-year">2023</span>
+                    <h3>Arapahoe Basin - Dynamic Pricing Dashboard</h3>
+                    <p>Designed and built internal tools for the revenue team to analyze and adjust lift ticket pricing based on demand patterns.</p>
+                    <div class="work-tech">
+                        <span>React</span>
+                        <span>D3.js</span>
+                        <span>Python</span>
+                        <span>SQL</span>
+                    </div>
+                </div>
+                
+                <div class="work-item">
+                    <span class="work-year">2022</span>
+                    <h3>Private Resort Client - Guest Data Unification</h3>
+                    <p>Consolidated guest data from 5 different systems into a single source of truth, enabling personalized marketing and better customer service.</p>
+                    <div class="work-tech">
+                        <span>ETL Pipelines</span>
+                        <span>PostgreSQL</span>
+                        <span>Node.js</span>
+                    </div>
+                </div>
+                
+                <div class="work-item">
+                    <span class="work-year">2021</span>
+                    <h3>Resort E-commerce Integration</h3>
+                    <p>Connected Shopify store with resort's ticketing system for seamless season pass purchases and fulfillment.</p>
+                    <div class="work-tech">
+                        <span>Shopify API</span>
+                        <span>Webhooks</span>
+                        <span>Node.js</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Side Projects -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2>Side Projects</h2>
+            <p class="section-intro">Things I build for fun (and to learn new stuff)</p>
+            
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>Frother.io</h3>
+                    <p>Building a project management tool specifically for small dev shops. Because Jira is overkill when you're a team of one.</p>
+                    <div class="project-links">
+                        <a href="#" class="project-link">In Development</a>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <h3>Ski Day Tracker</h3>
+                    <p>Personal app to track ski days, conditions, and stats. Integrates with Strava and weather APIs.</p>
+                    <div class="project-links">
+                        <a href="#" class="project-link"><i class="fab fa-github"></i> View Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <h3>Resort API Wrapper</h3>
+                    <p>Open-source Node.js library that simplifies common resort system integrations.</p>
+                    <div class="project-links">
+                        <a href="#" class="project-link"><i class="fab fa-npm"></i> npm package</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section - Casual -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Let's Chat</h2>
+            <div class="contact-content">
+                <p>I'm always interested in hearing about integration challenges, especially in the resort/hospitality space. Whether you need help with a specific project or just want to talk shop about resort tech, drop me a line.</p>
+                
+                <div class="contact-methods">
+                    <a href="mailto:zach@zmpd.dev" class="contact-method">
+                        <i class="fas fa-envelope"></i>
+                        <span>zach@zmpd.dev</span>
+                    </a>
+                    <a href="tel:+19704529404" class="contact-method">
+                        <i class="fas fa-phone"></i>
+                        <span>(970) 452-9404</span>
+                    </a>
+                    <a href="https://linkedin.com/in/zacharymaraziti" target="_blank" class="contact-method">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/yourgithub" target="_blank" class="contact-method">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                </div>
+                
+                <div class="availability">
+                    <p><strong>Current availability:</strong> Open for new projects starting Q1 2025</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Simple Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 Zach Maraziti · Built with vanilla JS because sometimes simple is better</p>
+        </div>
+    </footer>
+
+    <script src="script-personal.js"></script>
+</body>
+</html>

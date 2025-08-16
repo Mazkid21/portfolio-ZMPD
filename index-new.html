@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="ZMPD Professional Development Services - Resort technology integration specialists. Also serving hospitality, retail, and service businesses. Established 2017, based in Aspen, CO.">
+    
+    <title>ZMPD - Technology Integration & Development</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="style-portfolio.css">
+</head>
+<body>
+    <!-- Simple Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="#home">
+                    <img src="images/logoBlack.png" alt="ZMPD" style="height: 30px; width: auto; vertical-align: middle;">
+                </a>
+            </div>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="#about" class="nav-link">about</a></li>
+                <li><a href="#work" class="nav-link">work</a></li>
+                <li><a href="#services" class="nav-link">services</a></li>
+                <li><a href="#contact" class="nav-link">contact</a></li>
+                <!-- <li><a href="photography-portfolio.html" class="nav-link">photography</a></li> -->
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section - More Personal -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-intro">
+                    <h1>ZMPD Development</h1>
+                    <p class="hero-subtitle">Full-stack development and integration services specializing in ski resorts. Built by someone who actually understands how resorts work.</p>
+                    <p class="hero-detail">Hi, I'm Zach. After 9+ years in resort operations, I now help resorts (and other businesses) untangle their tech mess through ZMPD.</p>
+                    <div class="hero-links">
+                        <a href="#work" class="link-arrow">See my work <span>→</span></a>
+                       <!--  <a href="https://github.com/yourgithub" target="_blank" class="link-icon"><i class="fab fa-github"></i></a>
+                        <a href="https://linkedin.com/in/zacharymaraziti" target="_blank" class="link-icon"><i class="fab fa-linkedin"></i></a>
+-->                    </div>
+                </div>
+                <div class="hero-code">
+                    <pre><code><span class="comment">// Zach Maraziti Professional Development</span>
+<span class="keyword">const</span> <span class="variable">zmpd</span> = {
+  <span class="property">established</span>: <span class="number">2017</span>,
+  <span class="property">location</span>: <span class="string">"Aspen, CO"</span>,
+  <span class="property">current_project</span>: <span class="string">"Sugar Bowl integrations"</span>,
+  <span class="property">specialties</span>: [<span class="string">"resort tech"</span>, <span class="string">"integrations"</span>],
+  <span class="property">accepting_projects</span>: <span class="boolean">true</span>
+};</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section - More Personal -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About ZMPD</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>ZMPD Professional Development Services was founded in 2017 with a simple mission: help ski resorts solve their technology challenges with solutions built by someone who actually understands resort operations.</p>
+                    
+                    <p>With 9+ years of hands-on experience at Aspen Skiing Company and Arapahoe Basin, I bring a unique perspective to every project. I've been in the trenches during holiday rushes, dealt with POS crashes on powder days, and understand why that "small" integration issue is actually costing you thousands in guest satisfaction.</p>
+                    
+                    <p>While I specialize in resort technology, ZMPD also serves restaurants, retail, and other hospitality businesses. Whether it's syncing your POS with ticketing, automating locker assignments, or building custom dashboards, we focus on practical solutions that work for your team, not just on paper.</p>
+                    
+                    <p>Based in Aspen, Colorado, ZMPD serves resorts and businesses across North America with remote-first development and on-site support when needed.</p>
+                </div>
+                
+                <div class="about-skills">
+                    <h3>Technologies:</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">GraphQL</span>
+                        <span class="skill-tag">REST APIs</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">AWS</span>
+                    </div>
+                    
+                    <h3>Resort & Business Systems:</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">RTP</span>
+                        <span class="skill-tag">Axess</span>
+                        <span class="skill-tag">SKIDATA</span>
+                        <span class="skill-tag">Aspenware</span>
+                        <span class="skill-tag">Inntopia</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Section - Real Portfolio -->
+    <section id="work" class="work">
+        <div class="container">
+            <h2>Recent Projects</h2>
+            <div class="work-grid">
+                <div class="work-item featured">
+                    <span class="work-year">2025 - Present</span>
+                    <h3>Sugar Bowl Resort - Enviso Locker System Integration</h3>
+                    <p>Built a production-ready automated sync between RTPOne (resort management) and Enviso (locker access control) APIs. Completely automated RFID carrier assignment and locker access management for season pass holders.</p>
+                    <div class="work-tech">
+                        <span>Node.js</span>
+                        <span>SQL Server</span>
+                        <span>REST APIs</span>
+                        <span>Clean Architecture</span>
+                    </div>
+                    <div class="work-details">
+                        <h4>The Problem:</h4>
+                        <p>Sugar Bowl installed brand new smart lockers and wanted guests to use their existing ski passes (RFID cards) to access them. No existing integration between RTPOne and Enviso systems.</p>
+                        
+                        <h4>My Solution:</h4>
+                        <ul>
+                            <li>Implemented 3-phase sequential sync architecture for reliability</li>
+                            <li>Built clean 3-layer architecture (87% code reduction from initial version)</li>
+                            <li>Automated voucher relationship handling for family lockers</li>
+                            <li>Created refund detection and cleanup system</li>
+                            <li>Optimized with 4-phase reverse sync (60-80% performance improvement)</li>
+                        </ul>
+                        
+                        <h4>Results:</h4>
+                        <p>8-12 second per user sync, zero manual intervention, production-ready system awaiting October 2025 deployment when lockers are installed.</p>
+                    </div>
+                </div>
+                
+                <div class="work-item">
+                    <span class="work-year">2025 - Upcoming</span>
+                    <h3>Sugar Bowl Resort - QR Code Table Ordering System</h3>
+                    <p>Building QR code-based ordering system for on-mountain restaurants. Integrating with existing POS for seamless guest experience.</p>
+                    <div class="work-tech">
+                        <span>React</span>
+                        <span>Node.js</span>
+                        <span>RTPOne API</span>
+                        <span>Real-time Updates</span>
+                    </div>
+                </div>
+                
+                <div class="work-item">
+                    <span class="work-year">2025 - Upcoming</span>
+                    <h3>Sugar Bowl Resort - Homeowner Charge Account System</h3>
+                    <p>Revamping the homeowner charge account system for improved tracking and automated billing integration.</p>
+                    <div class="work-tech">
+                        <span>Database Design</span>
+                        <span>API Integration</span>
+                        <span>Billing Systems</span>
+                    </div>
+                </div>
+                
+                <div class="work-item">
+                    <span class="work-year">2025 - Planning</span>
+                    <h3>Sugar Bowl Resort - RTP Voucher Payment Integration</h3>
+                    <p>Implementing RTPOne voucher payment system for employee benefit vouchers, streamlining internal accounting processes.</p>
+                    <div class="work-tech">
+                        <span>RTPOne API</span>
+                        <span>Payment Processing</span>
+                        <span>Voucher Systems</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="projects">
+        <div class="container">
+            <h2>Services</h2>
+            <p class="section-intro">Practical solutions for real business problems</p>
+            
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>System Integration</h3>
+                    <p>Make your existing systems work together. POS to inventory, CRM to marketing, booking to operations - if you have disconnected systems, I can connect them.</p>
+                </div>
+                
+                <div class="project-card">
+                    <h3>Process Automation</h3>
+                    <p>Eliminate repetitive manual tasks. From data entry to report generation, let's automate the boring stuff so your team can focus on what matters.</p>
+                </div>
+                
+                <div class="project-card">
+                    <h3>Custom Development</h3>
+                    <p>When off-the-shelf doesn't cut it. Custom web apps, internal tools, customer portals - built specifically for your business needs.</p>
+                </div>
+                
+                <div class="project-card">
+                    <h3>Integration Assessment</h3>
+                    <p>Not sure where to start? I'll audit your current systems, identify integration opportunities, and create a roadmap with ROI projections.</p>
+                </div>
+                
+                <div class="project-card">
+                    <h3>Ongoing Support</h3>
+                    <p>Keep your integrations running smoothly. Monthly retainer includes monitoring, updates, and priority support for all your systems.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section - Casual -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Let's Talk</h2>
+            <div class="contact-content">
+                <p>ZMPD specializes in resort technology but also works with businesses in hospitality, retail, and service industries. Whether you're a ski resort dealing with disconnected systems or a restaurant group needing inventory integration, let's connect.</p>
+                
+                <div class="contact-methods">
+                    <div class="contact-method" data-contact="email">
+                        <i class="fas fa-envelope"></i>
+                        <span>Email</span>
+                    </div>
+                    <div class="contact-method" data-contact="phone">
+                        <i class="fas fa-phone"></i>
+                        <span>Phone</span>
+                    </div>
+                    <a href="https://linkedin.com/in/zacharymaraziti" target="_blank" class="contact-method">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://calendly.com/zmpd/consultation" target="_blank" class="contact-method">
+                        <i class="fas fa-calendar"></i>
+                        <span>Book a Call</span>
+                    </a>
+                </div>
+                
+              <!--  <div class="availability">
+                    <p><strong>Current availability:</strong> Open for new projects starting Q1 2025</p>
+                    <p style="color: var(--text-secondary); margin-top: 0.5rem;">Preferred project size: $15,000+</p>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Simple Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 ZMPD Professional Development Services · Established 2017 · Aspen, Colorado</p>
+        </div>
+    </footer>
+
+    <script src="script-portfolio.js"></script>
+</body>
+</html>
