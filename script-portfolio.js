@@ -119,4 +119,3 @@ document.addEventListener('DOMContentLoaded', function() {
 // Console message
 console.log('%cZMPD Professional Development Services', 'font-size: 16px; font-weight: bold; color: #0969da;');
 console.log('Resort Technology Integration Specialists');
-console.log('Contact: zach@zmpd.dev');
