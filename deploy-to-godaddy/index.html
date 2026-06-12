@@ -1,268 +1,481 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="ZMPD Professional Development Services - Resort technology integration specialists. Also serving hospitality, retail, and service businesses. Established 2017, based in Aspen, CO.">
-    
-    <title>ZMPD - Technology Integration & Development</title>
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="images/logoBlack.png">
-    <link rel="apple-touch-icon" href="images/logoBlack.png">
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Styles -->
-    <link rel="stylesheet" href="style-portfolio.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZMPD | Zach Maraziti · Resort Systems Engineer & Photographer</title>
+<meta name="description" content="ZMPD: Zach Maraziti. Full-stack developer specializing in ski resort system integrations (RTPOne, Enviso, Infogenesis), also serving hospitality, retail, and service businesses. Glenwood Springs, Colorado.">
+<meta property="og:title" content="ZMPD | I build the systems that run the mountain.">
+<meta property="og:description" content="Resort system integrations, automation, and custom development, built by someone who's worked the mountain for 9+ years. Plus landscape and astrophotography.">
+<meta property="og:url" content="https://zmpd.app/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --night-0:#05080f;
+  --night-1:#0a1020;
+  --night-2:#0e162b;
+  --night-3:#141f3a;
+  --ice:#7fd8ff;
+  --ice-dim:#4aa8d8;
+  --aurora:#5eead4;
+  --alpenglow:#ff9e6d;
+  --pink:#f9a8d4;
+  --text:#e8eef7;
+  --text-dim:#93a3bc;
+  --text-faint:#5b6b85;
+  --line:rgba(127,216,255,.12);
+  --card:rgba(20,31,58,.45);
+  --mono:'JetBrains Mono',monospace;
+  --sans:'Space Grotesk',sans-serif;
+  --body:'Inter',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--night-0);color:var(--text);font-family:var(--body);line-height:1.6;overflow-x:hidden}
+::selection{background:var(--ice);color:var(--night-0)}
+h1,h2,h3,h4{font-family:var(--sans);line-height:1.15}
+a{color:var(--ice);text-decoration:none}
+img{max-width:100%;display:block}
+
+/* ---------- nav ---------- */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;
+  padding:18px clamp(20px,5vw,64px);transition:background .4s,backdrop-filter .4s,border-color .4s;border-bottom:1px solid transparent}
+nav.scrolled{background:rgba(5,8,15,.82);backdrop-filter:blur(14px);border-bottom-color:var(--line)}
+.logo{font-family:var(--mono);font-weight:600;font-size:1.05rem;color:var(--text);letter-spacing:.06em}
+.logo span{color:var(--ice)}
+.logo em{color:var(--alpenglow);font-style:normal}
+.nav-links{display:flex;gap:clamp(14px,2.5vw,34px);align-items:center}
+.nav-links a{font-family:var(--mono);font-size:.78rem;color:var(--text-dim);letter-spacing:.08em;transition:color .25s}
+.nav-links a:hover{color:var(--ice)}
+.nav-links a.cta{border:1px solid var(--ice-dim);padding:8px 16px;border-radius:999px;color:var(--ice)}
+.nav-links a.cta:hover{background:var(--ice);color:var(--night-0)}
+.hamburger{display:none;background:none;border:none;cursor:pointer;color:var(--text);font-size:1.5rem}
+@media(max-width:760px){
+  .nav-links{position:fixed;inset:0;background:rgba(5,8,15,.97);flex-direction:column;justify-content:center;gap:30px;
+    transform:translateY(-100%);transition:transform .4s;z-index:-1}
+  .nav-links.open{transform:translateY(0)}
+  .nav-links a{font-size:1rem}
+  .hamburger{display:block;z-index:101}
+}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;overflow:hidden;
+  background:linear-gradient(180deg,#05080f 0%,#0a1228 55%,#101b3c 100%)}
+#stars{position:absolute;inset:0;width:100%;height:100%}
+.aurora{position:absolute;top:-10%;left:10%;width:80%;height:60%;pointer-events:none;opacity:.5;filter:blur(60px);
+  background:
+    radial-gradient(ellipse 40% 30% at 30% 40%,rgba(94,234,212,.25),transparent 70%),
+    radial-gradient(ellipse 35% 25% at 65% 30%,rgba(127,216,255,.18),transparent 70%),
+    radial-gradient(ellipse 30% 20% at 50% 55%,rgba(249,168,212,.12),transparent 70%);
+  animation:auroraDrift 14s ease-in-out infinite alternate}
+@keyframes auroraDrift{from{transform:translateX(-4%) skewX(-3deg)}to{transform:translateX(4%) skewX(3deg)}}
+.moon{position:absolute;top:12%;right:14%;width:64px;height:64px;border-radius:50%;
+  background:radial-gradient(circle at 38% 35%,#fdfbf4,#cdd6e6 70%);
+  box-shadow:0 0 50px 18px rgba(220,232,255,.18),0 0 120px 60px rgba(160,190,255,.07)}
+.mtn{position:absolute;left:0;right:0;bottom:-2px;width:100%;pointer-events:none}
+.mtn svg{display:block;width:100%;height:auto}
+.hero-inner{position:relative;z-index:5;width:100%;max-width:1180px;margin:0 auto;padding:120px clamp(20px,5vw,64px) 180px}
+.kicker{font-family:var(--mono);font-size:.8rem;color:var(--aurora);letter-spacing:.22em;text-transform:uppercase;margin-bottom:22px;display:flex;align-items:center;gap:12px}
+.kicker::before{content:"";width:34px;height:1px;background:var(--aurora)}
+.hero h1{font-size:clamp(2.5rem,6.4vw,4.9rem);font-weight:600;letter-spacing:-.02em;max-width:14ch}
+.hero h1 .grad{background:linear-gradient(100deg,var(--ice) 10%,var(--aurora) 55%,var(--alpenglow) 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.sub{margin-top:26px;max-width:54ch;color:var(--text-dim);font-size:clamp(1rem,1.4vw,1.15rem)}
+.type-line{margin-top:30px;font-family:var(--mono);font-size:.86rem;color:var(--text-faint)}
+.type-line .prompt{color:var(--aurora)}
+.type-line .typed{color:var(--ice)}
+.type-line .cursor{display:inline-block;width:8px;height:1.05em;background:var(--ice);vertical-align:text-bottom;animation:blink 1s steps(1) infinite;margin-left:2px}
+@keyframes blink{50%{opacity:0}}
+.hero-ctas{margin-top:42px;display:flex;gap:16px;flex-wrap:wrap}
+.btn{font-family:var(--mono);font-size:.84rem;letter-spacing:.05em;padding:14px 26px;border-radius:999px;transition:all .25s;display:inline-flex;align-items:center;gap:10px}
+.btn-primary{background:var(--ice);color:var(--night-0);font-weight:600}
+.btn-primary:hover{background:#a8e6ff;transform:translateY(-2px);box-shadow:0 8px 30px rgba(127,216,255,.25)}
+.btn-ghost{border:1px solid rgba(127,216,255,.35);color:var(--ice)}
+.btn-ghost:hover{border-color:var(--ice);background:rgba(127,216,255,.08);transform:translateY(-2px)}
+.scroll-hint{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:6;font-family:var(--mono);
+  font-size:.68rem;color:var(--text-faint);letter-spacing:.25em;text-transform:uppercase;animation:bob 2.4s ease-in-out infinite}
+@keyframes bob{50%{transform:translate(-50%,8px)}}
+
+/* ---------- shared section ---------- */
+section{position:relative;padding:clamp(80px,11vw,140px) clamp(20px,5vw,64px)}
+.wrap{max-width:1180px;margin:0 auto}
+.sec-label{font-family:var(--mono);font-size:.76rem;color:var(--aurora);letter-spacing:.24em;text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.sec-label::before{content:"";width:28px;height:1px;background:var(--aurora)}
+.sec-title{font-size:clamp(1.9rem,3.8vw,3rem);font-weight:600;letter-spacing:-.015em;margin-bottom:20px;max-width:22ch}
+.sec-title .hl{color:var(--ice)}
+.reveal{opacity:0;transform:translateY(32px);transition:opacity .8s cubic-bezier(.2,.7,.3,1),transform .8s cubic-bezier(.2,.7,.3,1)}
+.reveal.show{opacity:1;transform:none}
+
+/* ---------- stats strip ---------- */
+.stats{background:var(--night-1);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:54px clamp(20px,5vw,64px)}
+.stats .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:36px}
+.stat .num{font-family:var(--sans);font-size:clamp(2.2rem,4vw,3.2rem);font-weight:700;color:var(--ice);letter-spacing:-.02em}
+.stat .num small{font-size:.5em;color:var(--aurora)}
+.stat .lbl{font-family:var(--mono);font-size:.74rem;color:var(--text-dim);letter-spacing:.1em;text-transform:uppercase;margin-top:6px}
+
+/* ---------- about ---------- */
+.about{background:linear-gradient(180deg,var(--night-1),var(--night-0))}
+.about-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(36px,6vw,80px);align-items:start}
+@media(max-width:880px){.about-grid{grid-template-columns:1fr}}
+.about p{color:var(--text-dim);margin-bottom:18px;font-size:1.02rem}
+.about p strong{color:var(--text);font-weight:600}
+.term{background:#070c18;border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.45);font-family:var(--mono);font-size:.8rem}
+.term-bar{display:flex;align-items:center;gap:8px;padding:12px 16px;background:rgba(127,216,255,.05);border-bottom:1px solid var(--line)}
+.term-bar i{width:11px;height:11px;border-radius:50%;display:block}
+.term-bar i:nth-child(1){background:#ff5f57}.term-bar i:nth-child(2){background:#febc2e}.term-bar i:nth-child(3){background:#28c840}
+.term-bar span{margin-left:auto;color:var(--text-faint);font-size:.7rem}
+.term-body{padding:20px 22px;line-height:1.9;color:var(--text-dim)}
+.term-body .k{color:var(--pink)}.term-body .s{color:var(--aurora)}.term-body .n{color:var(--alpenglow)}.term-body .c{color:var(--text-faint)}
+.chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:26px}
+.chip{font-family:var(--mono);font-size:.72rem;color:var(--ice);border:1px solid rgba(127,216,255,.25);border-radius:999px;padding:6px 13px;background:rgba(127,216,255,.04)}
+.chip.warm{color:var(--alpenglow);border-color:rgba(255,158,109,.3);background:rgba(255,158,109,.05)}
+
+/* ---------- integration diagram ---------- */
+.diagram-sec{background:var(--night-1);border-top:1px solid var(--line)}
+.diagram-box{margin-top:44px;background:#070c18;border:1px solid var(--line);border-radius:18px;padding:clamp(16px,3vw,36px);overflow:hidden}
+.diagram-box svg{width:100%;height:auto;display:block}
+.node-rect{fill:rgba(20,31,58,.9);stroke:rgba(127,216,255,.35);stroke-width:1.2;rx:10}
+.node-rect.hub{stroke:var(--alpenglow);stroke-width:1.6}
+.node-title{font-family:var(--mono);font-size:13px;fill:var(--text);font-weight:600}
+.node-sub{font-family:var(--mono);font-size:9.5px;fill:var(--text-faint)}
+.flow-path{fill:none;stroke:rgba(127,216,255,.22);stroke-width:1.4;stroke-dasharray:5 6;animation:dashflow 1.4s linear infinite}
+@keyframes dashflow{to{stroke-dashoffset:-11}}
+.packet{fill:var(--aurora);filter:drop-shadow(0 0 6px var(--aurora))}
+.packet.warm{fill:var(--alpenglow);filter:drop-shadow(0 0 6px var(--alpenglow))}
+.diagram-cap{margin-top:18px;font-family:var(--mono);font-size:.74rem;color:var(--text-faint);text-align:center;letter-spacing:.05em}
+
+/* ---------- projects ---------- */
+.proj-list{margin-top:50px;display:flex;flex-direction:column;gap:22px}
+.proj{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:clamp(22px,3.4vw,40px);transition:border-color .3s,transform .3s,box-shadow .3s;position:relative;overflow:hidden}
+.proj::before{content:"";position:absolute;top:0;left:0;width:3px;height:100%;background:linear-gradient(180deg,var(--ice),var(--aurora));opacity:0;transition:opacity .3s}
+.proj:hover{border-color:rgba(127,216,255,.35);transform:translateY(-3px);box-shadow:0 18px 50px rgba(0,0,0,.35)}
+.proj:hover::before{opacity:1}
+.proj-top{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;align-items:baseline}
+.proj h3{font-size:clamp(1.15rem,2vw,1.5rem);font-weight:600}
+.proj .when{font-family:var(--mono);font-size:.72rem;color:var(--alpenglow);letter-spacing:.12em;text-transform:uppercase;white-space:nowrap}
+.proj .when.live{color:var(--aurora)}
+.proj p.desc{color:var(--text-dim);margin-top:12px;max-width:75ch}
+.proj-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.tag{font-family:var(--mono);font-size:.68rem;color:var(--text-dim);background:rgba(127,216,255,.07);border-radius:6px;padding:4px 10px}
+.proj details{margin-top:18px}
+.proj summary{font-family:var(--mono);font-size:.78rem;color:var(--ice);cursor:pointer;letter-spacing:.06em;list-style:none;display:inline-flex;align-items:center;gap:8px}
+.proj summary::marker{content:""}
+.proj summary::after{content:"+";font-size:1rem;transition:transform .25s}
+.proj details[open] summary::after{transform:rotate(45deg)}
+.proj .detail-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px;margin-top:18px}
+.proj .detail-grid h4{font-family:var(--mono);font-size:.72rem;color:var(--aurora);letter-spacing:.15em;text-transform:uppercase;margin-bottom:8px}
+.proj .detail-grid p,.proj .detail-grid li{font-size:.9rem;color:var(--text-dim)}
+.proj .detail-grid ul{padding-left:18px}
+.result-banner{margin-top:18px;font-family:var(--mono);font-size:.8rem;color:var(--aurora);background:rgba(94,234,212,.07);border:1px solid rgba(94,234,212,.2);border-radius:10px;padding:12px 16px}
+
+/* ---------- services ---------- */
+.services{background:var(--night-1);border-top:1px solid var(--line)}
+.svc-grid{margin-top:50px;display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:20px}
+.svc{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:30px 28px;transition:all .3s;position:relative}
+.svc:hover{border-color:rgba(255,158,109,.4);transform:translateY(-4px)}
+.svc .ic{font-size:1.5rem;margin-bottom:16px;display:block}
+.svc h3{font-size:1.12rem;margin-bottom:10px}
+.svc p{font-size:.92rem;color:var(--text-dim)}
+.svc .num{position:absolute;top:24px;right:26px;font-family:var(--mono);font-size:.7rem;color:var(--text-faint)}
+
+/* ---------- contact ---------- */
+.contact{background:var(--night-1);border-top:1px solid var(--line);text-align:center}
+.contact .sec-label{justify-content:center}
+.contact .sec-label::before{display:none}
+.contact .sec-title{margin:0 auto 18px}
+.contact p.lead{color:var(--text-dim);max-width:56ch;margin:0 auto 42px}
+.contact-grid{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:50px}
+.avail{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.74rem;color:var(--aurora);
+  border:1px solid rgba(94,234,212,.3);border-radius:999px;padding:8px 18px;margin-bottom:34px;letter-spacing:.08em}
+.avail .dot{width:8px;height:8px;border-radius:50%;background:var(--aurora);animation:pulse 1.8s ease-in-out infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 6px rgba(94,234,212,.15)}}
+footer{padding:34px clamp(20px,5vw,64px);border-top:1px solid var(--line);background:var(--night-0)}
+footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-family:var(--mono);font-size:.7rem;color:var(--text-faint);letter-spacing:.06em}
+footer a{color:var(--text-dim)}
+footer a:hover{color:var(--ice)}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
 </head>
 <body>
-    <!-- Simple Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-brand">
-                <a href="#home">
-                    <img src="images/logoBlack.png" alt="ZMPD" style="height: 30px; width: auto; vertical-align: middle;">
-                </a>
-            </div>
-            <button class="nav-toggle" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul class="nav-menu">
-                <li><a href="#about" class="nav-link">about</a></li>
-                <li><a href="#work" class="nav-link">work</a></li>
-                <li><a href="#services" class="nav-link">services</a></li>
-                <li><a href="#contact" class="nav-link">contact</a></li>
-                <!-- <li><a href="photography-portfolio.html" class="nav-link">photography</a></li> -->
-            </ul>
-        </div>
-    </nav>
 
-    <!-- Hero Section - More Personal -->
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-intro">
-                    <h1>ZMPD Development</h1>
-                    <p class="hero-subtitle">Full-stack development and integration services specializing in ski resorts. Built by someone who actually understands how resorts work.</p>
-                    <p class="hero-detail">Hi, I'm Zach. After 9+ years in resort operations, I now help resorts (and other businesses) untangle their tech mess through ZMPD.</p>
-                    <div class="hero-links">
-                        <a href="#work" class="link-arrow">See my work <span>→</span></a>
-                       <!--  <a href="https://github.com/yourgithub" target="_blank" class="link-icon"><i class="fab fa-github"></i></a>
-                        <a href="https://linkedin.com/in/zacharymaraziti" target="_blank" class="link-icon"><i class="fab fa-linkedin"></i></a>
--->                    </div>
-                </div>
-                <div class="hero-code">
-                    <pre><code><span class="comment">// Zach Maraziti Professional Development</span>
-<span class="keyword">const</span> <span class="variable">zmpd</span> = {
-  <span class="property">established</span>: <span class="number">2017</span>,
-  <span class="property">location</span>: <span class="string">"Aspen, CO"</span>,
-  <span class="property">current_project</span>: <span class="string">"Sugar Bowl integrations"</span>,
-  <span class="property">specialties</span>: [<span class="string">"resort tech"</span>, <span class="string">"integrations"</span>],
-  <span class="property">accepting_projects</span>: <span class="boolean">true</span>
-};</code></pre>
-                </div>
-            </div>
-        </div>
-    </section>
+<nav id="nav">
+  <a class="logo" href="#home"><span>Z</span>MPD<em>_</em></a>
+  <button class="hamburger" id="hamburger" aria-label="menu">☰</button>
+  <div class="nav-links" id="navLinks">
+    <a href="#about">about</a>
+    <a href="#systems">systems</a>
+    <a href="#work">work</a>
+    <a href="#services">services</a>
+    <a class="cta" href="#contact">start a project</a>
+  </div>
+</nav>
 
-    <!-- About Section - More Personal -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2>About ZMPD</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>ZMPD Professional Development Services was founded in 2017 with a simple mission: help ski resorts solve their technology challenges with solutions built by someone who actually understands resort operations.</p>
-                    
-                    <p>With 9+ years of hands-on experience at Aspen Skiing Company and Arapahoe Basin, I bring a unique perspective to every project. I've been in the trenches during holiday rushes, dealt with POS crashes on powder days, and understand why that "small" integration issue is actually costing you thousands in guest satisfaction.</p>
-                    
-                    <p>While I specialize in resort technology, ZMPD also serves restaurants, retail, and other hospitality businesses. Whether it's syncing your POS with ticketing, automating locker assignments, or building custom dashboards, we focus on practical solutions that work for your team, not just on paper.</p>
-                    
-                    <p>Based in Aspen, Colorado, ZMPD serves resorts and businesses across North America with remote-first development and on-site support when needed.</p>
-                </div>
-                
-                <div class="about-skills">
-                    <h3>Technologies:</h3>
-                    <div class="skill-list">
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">Node.js</span>
-                        <span class="skill-tag">React</span>
-                        <span class="skill-tag">SQL</span>
-                        <span class="skill-tag">GraphQL</span>
-                        <span class="skill-tag">REST APIs</span>
-                        <span class="skill-tag">PostgreSQL</span>
-                        <span class="skill-tag">AWS</span>
-                    </div>
-                    
-                    <h3>Resort & Business Systems:</h3>
-                    <div class="skill-list">
-                        <span class="skill-tag">RTP</span>
-                        <span class="skill-tag">Axess</span>
-                        <span class="skill-tag">SKIDATA</span>
-                        <span class="skill-tag">Aspenware</span>
-                        <span class="skill-tag">Inntopia</span>
-			<span class="skill-tag">One Risk</span>			
-			<span class="skill-tag"> Agilysys Infogenesis</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- ============ HERO ============ -->
+<header class="hero" id="home">
+  <canvas id="stars"></canvas>
+  <div class="aurora"></div>
+  <div class="moon"></div>
 
-    <!-- Work Section - Real Portfolio -->
-    <section id="work" class="work">
-        <div class="container">
-            <h2>Recent Projects</h2>
-            <div class="work-grid">
-                <div class="work-item featured">
-                    <span class="work-year">2025 - Present</span>
-                    <h3>Sugar Bowl Resort - Enviso Locker System Integration</h3>
-                    <p>Built a production-ready automated sync between RTPOne (resort management) and Enviso (locker access control) APIs. Completely automated RFID carrier assignment and locker access management for season pass holders.</p>
-                    <div class="work-tech">
-                        <span>Node.js</span>
-                        <span>SQL Server</span>
-                        <span>REST APIs</span>
-                        <span>Clean Architecture</span>
-                    </div>
-                    <div class="work-details">
-                        <h4>The Problem:</h4>
-                        <p>Sugar Bowl installed brand new smart lockers and wanted guests to use their existing ski passes (RFID cards) to access them. No existing integration between RTPOne and Enviso systems.</p>
-                        
-                        <h4>My Solution:</h4>
-                        <ul>
-                            <li>Implemented 3-phase sequential sync architecture for reliability</li>
-                            <li>Built clean 3-layer architecture</li>
-                            <li>Automated voucher relationship handling for family lockers</li>
-                            <li>Created refund detection and cleanup system</li>
-                            <li>Optimized with 4-phase reverse sync</li>
-                        </ul>
-                        
-                        <h4>Results:</h4>
-                        <p>8-12 second per user sync, zero manual intervention, production-ready system awaiting October 2025 deployment when lockers are installed.</p>
-                    </div>
-                </div>
-                
-                <div class="work-item">
-                    <span class="work-year">2025 - Upcoming</span>
-                    <h3>Sugar Bowl Resort - QR Code Table Ordering System</h3>
-                      <p>Integrating payment and discounts with existing POS (InfoGenesis) for seamless guest experience.</p> 								                    <div class="work-tech">
-                        <span>React</span>
-                        <span>Node.js</span>
-                        <span>RTPOne API</span>
-                        <span>Real-time Updates</span>
-                    </div>
-                </div>
-                
-                <div class="work-item">
-                    <span class="work-year">2025 - Upcoming</span>
-                    <h3>Sugar Bowl Resort - Homeowner Charge Account System</h3>
-                    <p>Revamping the homeowner charge account system for improved tracking and automated billing integration.</p>
-                    <div class="work-tech">
-                        <span>Database Design</span>
-                        <span>API Integration</span>
-                        <span>Billing Systems</span>
-                    </div>
-                </div>
-                
-                <div class="work-item">
-                    <span class="work-year">2025 - Planning</span>
-                    <h3>Sugar Bowl Resort - RTP Voucher Payment Integration</h3>
-                    <p>Implementing RTPOne voucher payment system for employee benefit vouchers, streamlining internal accounting processes.</p>
-                    <div class="work-tech">
-                        <span>RTPOne API</span>
-                        <span>Payment Processing</span>
-                        <span>Voucher Systems</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- layered mountains (parallax) -->
+  <div class="mtn" data-speed="0.12" style="z-index:1;opacity:.5">
+    <svg viewBox="0 0 1440 320" preserveAspectRatio="none" style="height:320px">
+      <path fill="#101b3c" d="M0 320 L0 210 L140 120 L260 190 L390 80 L520 180 L650 110 L800 200 L930 90 L1080 190 L1210 130 L1330 200 L1440 150 L1440 320 Z"/>
+    </svg>
+  </div>
+  <div class="mtn" data-speed="0.06" style="z-index:2;opacity:.8">
+    <svg viewBox="0 0 1440 280" preserveAspectRatio="none" style="height:280px">
+      <path fill="#0a1228" d="M0 280 L0 190 L170 90 L300 170 L450 60 L560 150 L720 70 L880 180 L1010 100 L1160 190 L1300 110 L1440 190 L1440 280 Z"/>
+      <path fill="#e8eef7" opacity=".14" d="M450 60 L480 95 L460 92 L495 130 L470 122 L450 60 Z M720 70 L748 102 L730 98 L760 132 L738 124 L720 70 Z"/>
+    </svg>
+  </div>
+  <div class="mtn" data-speed="0" style="z-index:3">
+    <svg viewBox="0 0 1440 200" preserveAspectRatio="none" style="height:200px">
+      <path fill="#05080f" d="M0 200 L0 140 L120 80 L260 150 L420 50 L540 130 L700 60 L850 145 L1000 70 L1150 150 L1290 90 L1440 150 L1440 200 Z"/>
+    </svg>
+  </div>
 
-    <!-- Services Section -->
-    <section id="services" class="projects">
-        <div class="container">
-            <h2>Services</h2>
-            <p class="section-intro">Practical solutions for real business problems</p>
-            
-            <div class="project-grid">
-                <div class="project-card">
-                    <h3>System Integration</h3>
-                    <p>Make your existing systems work together. POS to inventory, CRM to marketing, booking to operations - if you have disconnected systems, I can connect them.</p>
-                </div>
-                
-                <div class="project-card">
-                    <h3>Process Automation</h3>
-                    <p>Eliminate repetitive manual tasks. From data entry to report generation, let's automate the boring stuff so your team can focus on what matters.</p>
-                </div>
-                
-                <div class="project-card">
-                    <h3>Custom Development</h3>
-                    <p>When off-the-shelf doesn't cut it. Custom web apps, internal tools, customer portals - built specifically for your business needs.</p>
-                </div>
-                
-                <div class="project-card">
-                    <h3>Integration Assessment</h3>
-                    <p>Not sure where to start? I'll audit your current systems, identify integration opportunities, and create a roadmap with ROI projections.</p>
-                </div>
-                
-                <div class="project-card">
-                    <h3>Ongoing Support</h3>
-                    <p>Keep your integrations running smoothly. Monthly retainer includes monitoring, updates, and priority support for all your systems.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+  <div class="hero-inner">
+    <div class="kicker">Glenwood Springs, Colorado · Est. 2014</div>
+    <h1>I build the <span class="grad">systems that run the mountain.</span></h1>
+    <p class="sub">Hi, I'm Zach Maraziti. Nine seasons working ski resort operations, eight-plus years shipping production software. ZMPD connects the platforms businesses run on: POS, access control, ticketing, CRM, and guest systems. Ski resorts are the specialty; restaurants, retail, and other operations-heavy businesses get the same treatment.</p>
+    <div class="type-line"><span class="prompt">zmpd@aspen</span>:~$ <span class="typed" id="typed"></span><span class="cursor"></span></div>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="#work">See the work ↓</a>
+      <a class="btn btn-ghost" href="#contact">Book a call</a>
+    </div>
+  </div>
+  <div class="scroll-hint">scroll</div>
+</header>
 
-    <!-- Contact Section - Casual -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Let's Talk</h2>
-            <div class="contact-content">
-                <p>ZMPD specializes in resort technology but also works with businesses in hospitality, retail, and service industries. Whether you're a ski resort dealing with disconnected systems or a restaurant group needing inventory integration, let's connect.</p>
-                
-                <div class="contact-methods">
-                    <div class="contact-method" data-contact="email">
-                        <i class="fas fa-envelope"></i>
-                        <span>Email</span>
-                    </div>
-                    <div class="contact-method" data-contact="phone">
-                        <i class="fas fa-phone"></i>
-                        <span>Phone</span>
-                    </div>
-                    <a href="https://linkedin.com/in/zacharymaraziti" target="_blank" class="contact-method">
-                        <i class="fab fa-linkedin"></i>
-                        <span>LinkedIn</span>
-                    </a>
-                    <a href="https://calendly.com/zmpd-consultation" target="_blank" class="contact-method">
-                        <i class="fas fa-calendar"></i>
-                        <span>Book a Call</span>
-                    </a>
-                </div>
-                
-              <!--  <div class="availability">
-                    <p><strong>Current availability:</strong> Open for new projects starting Q1 2025</p>
-                    <p style="color: var(--text-secondary); margin-top: 0.5rem;">Preferred project size: $15,000+</p>
-                </div> -->
-            </div>
-        </div>
-    </section>
+<!-- ============ STATS ============ -->
+<div class="stats">
+  <div class="wrap">
+    <div class="stat reveal"><div class="num"><span class="count" data-target="9">0</span><small>+ yrs</small></div><div class="lbl">Resort operations</div></div>
+    <div class="stat reveal"><div class="num"><span class="count" data-target="8">0</span><small>+ yrs</small></div><div class="lbl">Software engineering</div></div>
+    <div class="stat reveal"><div class="num"><span class="count" data-target="10">0</span><small>s / user</small></div><div class="lbl">Sync speed, RTPOne ↔ Enviso</div></div>
+    <div class="stat reveal"><div class="num">0<small> manual steps</small></div><div class="lbl">After my integrations ship</div></div>
+  </div>
+</div>
 
-    <!-- Simple Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>© 2025 ZMPD Professional Development Services · Established 2017 · Aspen, Colorado</p>
+<!-- ============ ABOUT ============ -->
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div class="reveal">
+      <div class="sec-label">About</div>
+      <h2 class="sec-title">Most developers have never worked a <span class="hl">powder-day POS crash.</span> I have.</h2>
+      <p>I spent six seasons at <strong>Aspen Skiing Company</strong> and three-plus years as <strong>Senior Product &amp; Database Manager at Arapahoe Basin</strong>, running ticketing, pass, and guest systems from the inside. I know exactly which "small" integration gap quietly costs a resort thousands in guest satisfaction, because I've stood at the window apologizing for it.</p>
+      <p>Then I learned to fix it myself. Since 2017, ZMPD has delivered <strong>production integrations and custom software</strong> for resorts and hospitality businesses, most recently as lead contractor for <strong>Sugar Bowl Resort</strong>, where my RTPOne ↔ Enviso integration runs guest locker access with zero manual intervention. And while resorts are the specialty, the work travels: ZMPD serves restaurants, retail, and other hospitality and service businesses with the same approach. Disconnected systems are disconnected systems.</p>
+      <p>And when the lifts close, I'm out shooting the same mountains: landscape and astrophotography since 2014.</p>
+      <div class="chips">
+        <span class="chip">Node.js</span><span class="chip">React</span><span class="chip">SQL / PostgreSQL</span><span class="chip">Express</span><span class="chip">REST APIs</span><span class="chip">Railway</span>
+        <span class="chip warm">RTPOne</span><span class="chip warm">Enviso</span><span class="chip warm">Infogenesis</span><span class="chip warm">Aspenware</span><span class="chip warm">Salto</span><span class="chip warm">Gantner</span>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="term">
+        <div class="term-bar"><i></i><i></i><i></i><span>zmpd.config.js</span></div>
+        <div class="term-body">
+<span class="k">const</span> zmpd = {<br>
+&nbsp;&nbsp;founder: <span class="s">"Zach Maraziti"</span>,<br>
+&nbsp;&nbsp;photography_since: <span class="n">2014</span>,<br>
+&nbsp;&nbsp;development_since: <span class="n">2017</span>,<br>
+&nbsp;&nbsp;base: <span class="s">"Glenwood Springs, CO"</span>,<br>
+&nbsp;&nbsp;current_client: <span class="s">"Sugar Bowl Resort"</span>,<br>
+&nbsp;&nbsp;speciality: [<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="s">"resort system integration"</span>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="s">"process automation"</span>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="s">"mountain photography"</span><br>
+&nbsp;&nbsp;],<br>
+&nbsp;&nbsp;accepting_projects: <span class="n">true</span> <span class="c">// ← yes, now</span><br>
+};
         </div>
-    </footer>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <script src="script-portfolio.js"></script>
+<!-- ============ SYSTEMS DIAGRAM ============ -->
+<section class="diagram-sec" id="systems">
+  <div class="wrap">
+    <div class="sec-label reveal">How it fits together</div>
+    <h2 class="sec-title reveal">Your systems, <span class="hl">actually talking</span> to each other.</h2>
+    <p class="reveal" style="color:var(--text-dim);max-width:62ch">A live picture of the kind of architecture I build: one sync engine in the middle, every platform speaking through it. The examples here are resort systems; swap in your POS, booking, inventory, or CRM stack and the pattern holds. Watch the data move.</p>
+    <div class="diagram-box reveal">
+      <svg viewBox="0 0 900 380" xmlns="http://www.w3.org/2000/svg" aria-label="System integration diagram">
+        <!-- flow paths -->
+        <path id="p1" class="flow-path" d="M205 90 C 300 90, 330 175, 405 185"/>
+        <path id="p2" class="flow-path" d="M205 190 L 400 190"/>
+        <path id="p3" class="flow-path" d="M205 290 C 300 290, 330 205, 405 195"/>
+        <path id="p4" class="flow-path" d="M495 185 C 570 175, 600 90, 695 90"/>
+        <path id="p5" class="flow-path" d="M495 190 L 695 190"/>
+        <path id="p6" class="flow-path" d="M495 195 C 570 205, 600 290, 695 290"/>
+        <!-- packets -->
+        <circle class="packet" r="4"><animateMotion dur="3.2s" repeatCount="indefinite"><mpath href="#p1"/></animateMotion></circle>
+        <circle class="packet warm" r="4"><animateMotion dur="2.6s" begin="0.6s" repeatCount="indefinite"><mpath href="#p2"/></animateMotion></circle>
+        <circle class="packet" r="4"><animateMotion dur="3.6s" begin="1.1s" repeatCount="indefinite"><mpath href="#p3"/></animateMotion></circle>
+        <circle class="packet warm" r="4"><animateMotion dur="3s" begin="0.3s" repeatCount="indefinite"><mpath href="#p4"/></animateMotion></circle>
+        <circle class="packet" r="4"><animateMotion dur="2.8s" begin="1.4s" repeatCount="indefinite"><mpath href="#p5"/></animateMotion></circle>
+        <circle class="packet warm" r="4"><animateMotion dur="3.4s" begin="0.9s" repeatCount="indefinite"><mpath href="#p6"/></animateMotion></circle>
+        <!-- left nodes -->
+        <g><rect class="node-rect" x="45" y="60" width="160" height="60" rx="10"/><text class="node-title" x="125" y="86" text-anchor="middle">RTPOne</text><text class="node-sub" x="125" y="104" text-anchor="middle">resort management / POS</text></g>
+        <g><rect class="node-rect" x="45" y="160" width="160" height="60" rx="10"/><text class="node-title" x="125" y="186" text-anchor="middle">Infogenesis</text><text class="node-sub" x="125" y="204" text-anchor="middle">F&amp;B point of sale</text></g>
+        <g><rect class="node-rect" x="45" y="260" width="160" height="60" rx="10"/><text class="node-title" x="125" y="286" text-anchor="middle">Aspenware</text><text class="node-sub" x="125" y="304" text-anchor="middle">e-commerce</text></g>
+        <!-- hub -->
+        <g><rect class="node-rect hub" x="405" y="150" width="90" height="80" rx="12"/><text class="node-title" x="450" y="185" text-anchor="middle" fill="#ff9e6d">ZMPD</text><text class="node-sub" x="450" y="203" text-anchor="middle">sync engine</text></g>
+        <!-- right nodes -->
+        <g><rect class="node-rect" x="695" y="60" width="160" height="60" rx="10"/><text class="node-title" x="775" y="86" text-anchor="middle">Enviso / Salto</text><text class="node-sub" x="775" y="104" text-anchor="middle">locker &amp; access control</text></g>
+        <g><rect class="node-rect" x="695" y="160" width="160" height="60" rx="10"/><text class="node-title" x="775" y="186" text-anchor="middle">Guest CRM</text><text class="node-sub" x="775" y="204" text-anchor="middle">profiles &amp; passes</text></g>
+        <g><rect class="node-rect" x="695" y="260" width="160" height="60" rx="10"/><text class="node-title" x="775" y="286" text-anchor="middle">Reporting</text><text class="node-sub" x="775" y="304" text-anchor="middle">dashboards &amp; billing</text></g>
+      </svg>
+    </div>
+    <p class="diagram-cap reveal">// live at Sugar Bowl Resort: RFID pass → locker door, 8-12s per guest, zero hands on keyboard</p>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section id="work">
+  <div class="wrap">
+    <div class="sec-label reveal">Selected work</div>
+    <h2 class="sec-title reveal">Production systems, <span class="hl">running today.</span></h2>
+    <div class="proj-list">
+
+      <article class="proj reveal">
+        <div class="proj-top">
+          <h3>RTPOne ↔ Enviso Locker Integration · Sugar Bowl Resort</h3>
+          <span class="when live">● In production</span>
+        </div>
+        <p class="desc">Sugar Bowl installed smart lockers and wanted guests to open them with the RFID ski pass already in their pocket. No integration existed between RTPOne and Enviso, so I built one: a fully automated sync of guest data, media assignments, and authorization groups.</p>
+        <div class="proj-meta"><span class="tag">Node.js</span><span class="tag">SQL Server</span><span class="tag">REST APIs</span><span class="tag">Clean architecture</span></div>
+        <details>
+          <summary>architecture &amp; results</summary>
+          <div class="detail-grid">
+            <div><h4>The problem</h4><p>Two vendor systems, zero shared language. Guests would otherwise need separate locker credentials, managed by hand, all season.</p></div>
+            <div><h4>The build</h4><ul><li>3-phase sequential sync for reliability</li><li>3-layer clean architecture</li><li>Automated voucher handling for family lockers</li><li>Refund detection &amp; access cleanup</li><li>4-phase reverse sync optimization</li></ul></div>
+            <div><h4>The result</h4><p>8-12 seconds per guest, end to end. Pass scanned at the window → locker opens on the hill. Zero manual intervention.</p></div>
+          </div>
+          <div class="result-banner">→ Season pass to locker door, fully automated. No spreadsheets were harmed (or used).</div>
+        </details>
+      </article>
+
+      <article class="proj reveal">
+        <div class="proj-top">
+          <h3>Village Project F&amp;B / POS Integration · Sugar Bowl Resort</h3>
+          <span class="when live">● In production</span>
+        </div>
+        <p class="desc">Architected and delivered the integration connecting Infogenesis (Agilysys) with RTPOne for Sugar Bowl's Village Project: Generic Authorization account design, pass-based discounting at the register, and resort-charge workflows, so a guest's pass is also their wallet.</p>
+        <div class="proj-meta"><span class="tag">Infogenesis API</span><span class="tag">RTPOne</span><span class="tag">Payments</span><span class="tag">System design</span></div>
+      </article>
+
+      <article class="proj reveal">
+        <div class="proj-top">
+          <h3>Homeowner Charge Accounts &amp; Voucher Payments · Sugar Bowl Resort</h3>
+          <span class="when live">● In production</span>
+        </div>
+        <p class="desc">Revamped homeowner charge accounts with automated billing integration, and implemented RTPOne voucher payments for employee benefits, replacing manual accounting workflows with systems that reconcile themselves.</p>
+        <div class="proj-meta"><span class="tag">Database design</span><span class="tag">Billing</span><span class="tag">RTPOne API</span><span class="tag">Voucher systems</span></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="sec-label reveal">Services</div>
+    <h2 class="sec-title reveal">Practical fixes for <span class="hl">real operational pain.</span></h2>
+    <div class="svc-grid">
+      <div class="svc reveal"><span class="num">01</span><span class="ic">⟷</span><h3>System Integration</h3><p>POS to ticketing, CRM to marketing, booking to operations, inventory to e-commerce. If your systems don't talk, I make them fluent: RTPOne, Aspenware, Infogenesis, Enviso, and whatever your stack runs on.</p></div>
+      <div class="svc reveal"><span class="num">02</span><span class="ic">⚙</span><h3>Process Automation</h3><p>Data entry, report generation, reconciliation: the work nobody should be doing by hand. Automate it and give your team the season back.</p></div>
+      <div class="svc reveal"><span class="num">03</span><span class="ic">⌨</span><h3>Custom Development</h3><p>When off-the-shelf doesn't cut it: web apps, internal tools, guest portals, and dashboards built around how your operation actually runs.</p></div>
+      <div class="svc reveal"><span class="num">04</span><span class="ic">⛰</span><h3>Integration Assessment</h3><p>Not sure where to start? I'll audit your stack, map the integration opportunities, and hand you a roadmap with real ROI projections.</p></div>
+      <div class="svc reveal"><span class="num">05</span><span class="ic">☂</span><h3>Ongoing Support</h3><p>Monthly retainer with monitoring, updates, and priority response, so the integration that works in October still works on the busiest Saturday in February.</p></div>
+      <div class="svc reveal"><span class="num">06</span><span class="ic">✦</span><h3>Photography</h3><p>Landscape, astrophotography, action sports, and events. Resort marketing imagery shot by someone who knows where the light hits the hill. Since 2014.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="avail reveal"><span class="dot"></span>ACCEPTING PROJECTS · SUMMER/FALL 2026</div>
+    <div class="sec-label reveal" style="display:block">Contact</div>
+    <h2 class="sec-title reveal">Let's untangle <span class="hl">your tech mess.</span></h2>
+    <p class="lead reveal">Ski resort with disconnected systems, hospitality group drowning in manual workflows, or anyone who needs software built by someone who's lived the operational side. Let's talk.</p>
+    <div class="contact-grid reveal">
+      <a class="btn btn-primary" href="mailto:zach@zmpd.app">zach@zmpd.app</a>
+      <a class="btn btn-ghost" href="tel:+19704529404">(970) 452-9404</a>
+      <a class="btn btn-ghost" href="https://calendly.com/zmpd-consultation" target="_blank" rel="noopener">Book a call</a>
+    </div>
+    <div class="contact-grid reveal" style="margin-bottom:0">
+      <a class="btn btn-ghost" href="https://linkedin.com/in/zach-maraziti" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn btn-ghost" href="https://github.com/Mazkid21" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 ZMPD LLC · Photography since 2014 · Development since 2017</span>
+    <span>Glenwood Springs, Colorado · <a href="#home">back to the summit ↑</a></span>
+  </div>
+</footer>
+
+<script>
+/* ---------- starfield ---------- */
+const cv=document.getElementById('stars'),cx=cv.getContext('2d');
+let stars=[],shooting=[],W,H;
+function sizeCanvas(){W=cv.width=cv.offsetWidth*devicePixelRatio;H=cv.height=cv.offsetHeight*devicePixelRatio;
+  stars=Array.from({length:Math.min(260,W/8)},()=>({x:Math.random()*W,y:Math.random()*H*.75,r:Math.random()*1.4+.3,tw:Math.random()*Math.PI*2,sp:.008+Math.random()*.02}));}
+sizeCanvas();addEventListener('resize',sizeCanvas);
+function spawnShooting(){if(Math.random()<.006&&shooting.length<2){shooting.push({x:Math.random()*W*.8,y:Math.random()*H*.3,vx:6+Math.random()*5,vy:2+Math.random()*2,life:1});}}
+const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function draw(){cx.clearRect(0,0,W,H);
+  for(const s of stars){s.tw+=s.sp;const a=.35+.55*Math.abs(Math.sin(s.tw));
+    cx.beginPath();cx.arc(s.x,s.y,s.r*devicePixelRatio,0,7);cx.fillStyle=`rgba(220,235,255,${a})`;cx.fill();}
+  spawnShooting();
+  shooting=shooting.filter(m=>m.life>0);
+  for(const m of shooting){m.x+=m.vx*devicePixelRatio;m.y+=m.vy*devicePixelRatio;m.life-=.018;
+    const g=cx.createLinearGradient(m.x,m.y,m.x-m.vx*10*devicePixelRatio,m.y-m.vy*10*devicePixelRatio);
+    g.addColorStop(0,`rgba(255,255,255,${m.life})`);g.addColorStop(1,'transparent');
+    cx.strokeStyle=g;cx.lineWidth=1.4*devicePixelRatio;cx.beginPath();cx.moveTo(m.x,m.y);
+    cx.lineTo(m.x-m.vx*10*devicePixelRatio,m.y-m.vy*10*devicePixelRatio);cx.stroke();}
+  if(!reduced)requestAnimationFrame(draw);}
+draw();if(reduced){/* single static frame already drawn */}
+
+/* ---------- typing ---------- */
+const lines=["node sync-rtp-enviso.js --resort sugarbowl","✓ 1,842 passholders synced · 0 manual steps","npx zmpd --new-project YOUR_RESORT"];
+const typedEl=document.getElementById('typed');let li=0,ci=0,deleting=false;
+function type(){const line=lines[li];
+  if(!deleting){typedEl.textContent=line.slice(0,++ci);
+    if(ci===line.length){deleting=true;setTimeout(type,2200);return}}
+  else{typedEl.textContent=line.slice(0,--ci);
+    if(ci===0){deleting=false;li=(li+1)%lines.length}}
+  setTimeout(type,deleting?22:55);}
+if(!reduced)type();else typedEl.textContent=lines[2];
+
+/* ---------- nav ---------- */
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>{nav.classList.toggle('scrolled',scrollY>40);
+  /* parallax mountains */
+  document.querySelectorAll('.mtn').forEach(m=>{const sp=parseFloat(m.dataset.speed);if(sp)m.style.transform=`translateY(${scrollY*sp}px)`;});
+},{passive:true});
+const burger=document.getElementById('hamburger'),links=document.getElementById('navLinks');
+burger.addEventListener('click',()=>links.classList.toggle('open'));
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+
+/* ---------- reveal on scroll ---------- */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target);}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* ---------- counters ---------- */
+const cio=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;cio.unobserve(e.target);
+  const el=e.target,target=+el.dataset.target,t0=performance.now();
+  (function step(t){const p=Math.min((t-t0)/1200,1);el.textContent=Math.round(target*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(step);})(t0);}),{threshold:.6});
+document.querySelectorAll('.count').forEach(el=>cio.observe(el));
+
+</script>
 </body>
 </html>
