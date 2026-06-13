@@ -8,6 +8,14 @@
 <meta property="og:title" content="ZMPD | I build the systems that run the mountain.">
 <meta property="og:description" content="Resort system integrations, automation, and custom development, built by someone who's worked the mountain for 9+ years. Plus landscape and astrophotography.">
 <meta property="og:url" content="https://zmpd.app/">
+<!-- Google Analytics 4 · REPLACE G-XXXXXXXXXX with your Measurement ID (see deploy notes) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8W5SEVBNZT"></script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-XXXXXXXXXX');
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -471,6 +479,16 @@ const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.targ
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
 /* ---------- counters ---------- */
+/* ---------- GA4 conversion events ---------- */
+function track(name,label){if(typeof gtag==='function')gtag('event',name,{event_label:label});}
+document.querySelectorAll('a[href^="mailto:"]').forEach(a=>a.addEventListener('click',()=>track('contact_email','zach@zmpd.app')));
+document.querySelectorAll('a[href^="tel:"]').forEach(a=>a.addEventListener('click',()=>track('contact_phone','970-452-9404')));
+document.querySelectorAll('a[href*="calendly"]').forEach(a=>a.addEventListener('click',()=>track('book_call','calendly')));
+document.querySelectorAll('a[href*="linkedin"]').forEach(a=>a.addEventListener('click',()=>track('outbound_social','linkedin')));
+document.querySelectorAll('a[href*="github"]').forEach(a=>a.addEventListener('click',()=>track('outbound_social','github')));
+let contactSeen=false;
+new IntersectionObserver(es=>{if(!contactSeen&&es.some(e=>e.isIntersecting)){contactSeen=true;track('view_contact','scrolled_to_contact');}},{threshold:.4}).observe(document.getElementById('contact'));
+
 const cio=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;cio.unobserve(e.target);
   const el=e.target,target=+el.dataset.target,t0=performance.now();
   (function step(t){const p=Math.min((t-t0)/1200,1);el.textContent=Math.round(target*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(step);})(t0);}),{threshold:.6});
