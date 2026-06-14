@@ -1,121 +1,61 @@
-// Simple, clean JavaScript for portfolio site
-document.addEventListener('DOMContentLoaded', function() {
-    // Mobile navigation
-    const navToggle = document.querySelector('.nav-toggle');
-    const navMenu = document.querySelector('.nav-menu');
-    
-    navToggle.addEventListener('click', function() {
-        navMenu.classList.toggle('active');
-        
-        // Animate hamburger
-        const spans = navToggle.querySelectorAll('span');
-        if (navMenu.classList.contains('active')) {
-            spans[0].style.transform = 'rotate(-45deg) translate(-5px, 6px)';
-            spans[1].style.opacity = '0';
-            spans[2].style.transform = 'rotate(45deg) translate(-5px, -6px)';
-        } else {
-            spans[0].style.transform = '';
-            spans[1].style.opacity = '1';
-            spans[2].style.transform = '';
-        }
-    });
-    
-    // Close mobile menu when clicking links
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', () => {
-            navMenu.classList.remove('active');
-            const spans = navToggle.querySelectorAll('span');
-            spans[0].style.transform = '';
-            spans[1].style.opacity = '1';
-            spans[2].style.transform = '';
-        });
-    });
-    
-    // Smooth scrolling
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                const navHeight = document.querySelector('.navbar').offsetHeight;
-                window.scrollTo({
-                    top: target.offsetTop - navHeight - 20,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-    
-    // Update active nav on scroll
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-link');
-    
-    window.addEventListener('scroll', () => {
-        let current = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            if (scrollY >= (sectionTop - 100)) {
-                current = section.getAttribute('id');
-            }
-        });
-        
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${current}`) {
-                link.classList.add('active');
-            }
-        });
-    });
-    
-    // Simple fade in on scroll
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, observerOptions);
-    
-    // Observe work items and project cards
-    document.querySelectorAll('.work-item, .project-card').forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-        observer.observe(el);
-    });
-    
-    // Update established year dynamically
-    const establishedYear = 2017;
-    const currentYear = new Date().getFullYear();
-    const yearsInBusiness = currentYear - establishedYear;
-    
-    // Update footer to show years in business
-    const footerText = document.querySelector('.footer p');
-    if (footerText && yearsInBusiness > 7) {
-        footerText.innerHTML = footerText.innerHTML.replace('Established 2017', `Established 2017 · ${yearsInBusiness} Years in Business`);
-    }
-    
-    // Handle obfuscated contact clicks
-    document.querySelectorAll('.contact-method[data-contact]').forEach(el => {
-        el.style.cursor = 'pointer';
-        el.addEventListener('click', function() {
-            const type = this.getAttribute('data-contact');
-            if (type === 'email') {
-                window.location.href = 'mailto:' + 'zach' + '@' + 'zmpd.app';
-            } else if (type === 'phone') {
-                window.location.href = 'tel:+1' + '970' + '452' + '9404';
-            }
-        });
-    });
-});
+/* ---------- starfield ---------- */
+const cv=document.getElementById('stars'),cx=cv.getContext('2d');
+let stars=[],shooting=[],W,H;
+function sizeCanvas(){W=cv.width=cv.offsetWidth*devicePixelRatio;H=cv.height=cv.offsetHeight*devicePixelRatio;
+  stars=Array.from({length:Math.min(260,W/8)},()=>({x:Math.random()*W,y:Math.random()*H*.75,r:Math.random()*1.4+.3,tw:Math.random()*Math.PI*2,sp:.008+Math.random()*.02}));}
+sizeCanvas();addEventListener('resize',sizeCanvas);
+function spawnShooting(){if(Math.random()<.006&&shooting.length<2){shooting.push({x:Math.random()*W*.8,y:Math.random()*H*.3,vx:6+Math.random()*5,vy:2+Math.random()*2,life:1});}}
+const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function draw(){cx.clearRect(0,0,W,H);
+  for(const s of stars){s.tw+=s.sp;const a=.35+.55*Math.abs(Math.sin(s.tw));
+    cx.beginPath();cx.arc(s.x,s.y,s.r*devicePixelRatio,0,7);cx.fillStyle=`rgba(220,235,255,${a})`;cx.fill();}
+  spawnShooting();
+  shooting=shooting.filter(m=>m.life>0);
+  for(const m of shooting){m.x+=m.vx*devicePixelRatio;m.y+=m.vy*devicePixelRatio;m.life-=.018;
+    const g=cx.createLinearGradient(m.x,m.y,m.x-m.vx*10*devicePixelRatio,m.y-m.vy*10*devicePixelRatio);
+    g.addColorStop(0,`rgba(255,255,255,${m.life})`);g.addColorStop(1,'transparent');
+    cx.strokeStyle=g;cx.lineWidth=1.4*devicePixelRatio;cx.beginPath();cx.moveTo(m.x,m.y);
+    cx.lineTo(m.x-m.vx*10*devicePixelRatio,m.y-m.vy*10*devicePixelRatio);cx.stroke();}
+  if(!reduced)requestAnimationFrame(draw);}
+draw();if(reduced){/* single static frame already drawn */}
 
-// Console message
-console.log('%cZMPD Professional Development Services', 'font-size: 16px; font-weight: bold; color: #0969da;');
-console.log('Resort Technology Integration Specialists');
+/* ---------- typing ---------- */
+const lines=["node sync-rtp-enviso.js --resort sugarbowl","✓ 1,842 passholders synced · 0 manual steps","npx zmpd --new-project YOUR_RESORT"];
+const typedEl=document.getElementById('typed');let li=0,ci=0,deleting=false;
+function type(){const line=lines[li];
+  if(!deleting){typedEl.textContent=line.slice(0,++ci);
+    if(ci===line.length){deleting=true;setTimeout(type,2200);return}}
+  else{typedEl.textContent=line.slice(0,--ci);
+    if(ci===0){deleting=false;li=(li+1)%lines.length}}
+  setTimeout(type,deleting?22:55);}
+if(!reduced)type();else typedEl.textContent=lines[2];
+
+/* ---------- nav ---------- */
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>{nav.classList.toggle('scrolled',scrollY>40);
+  /* parallax mountains */
+  document.querySelectorAll('.mtn').forEach(m=>{const sp=parseFloat(m.dataset.speed);if(sp)m.style.transform=`translateY(${scrollY*sp}px)`;});
+},{passive:true});
+const burger=document.getElementById('hamburger'),links=document.getElementById('navLinks');
+burger.addEventListener('click',()=>links.classList.toggle('open'));
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+
+/* ---------- reveal on scroll ---------- */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target);}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* ---------- counters ---------- */
+/* ---------- GA4 conversion events ---------- */
+function track(name,label){if(typeof gtag==='function')gtag('event',name,{event_label:label});}
+document.querySelectorAll('a[href^="mailto:"]').forEach(a=>a.addEventListener('click',()=>track('contact_email','zach@zmpd.app')));
+document.querySelectorAll('a[href^="tel:"]').forEach(a=>a.addEventListener('click',()=>track('contact_phone','970-452-9404')));
+document.querySelectorAll('a[href*="calendly"]').forEach(a=>a.addEventListener('click',()=>track('book_call','calendly')));
+document.querySelectorAll('a[href*="linkedin"]').forEach(a=>a.addEventListener('click',()=>track('outbound_social','linkedin')));
+document.querySelectorAll('a[href*="github"]').forEach(a=>a.addEventListener('click',()=>track('outbound_social','github')));
+let contactSeen=false;
+new IntersectionObserver(es=>{if(!contactSeen&&es.some(e=>e.isIntersecting)){contactSeen=true;track('view_contact','scrolled_to_contact');}},{threshold:.4}).observe(document.getElementById('contact'));
+
+const cio=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;cio.unobserve(e.target);
+  const el=e.target,target=+el.dataset.target,t0=performance.now();
+  (function step(t){const p=Math.min((t-t0)/1200,1);el.textContent=Math.round(target*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(step);})(t0);}),{threshold:.6});
+document.querySelectorAll('.count').forEach(el=>cio.observe(el));
